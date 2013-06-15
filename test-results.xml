@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 27.0 (Mac)" package="" timestamp="2013-06-14T11:27:07" id="0" hostname="Isaacs-MacBook-Pro.local" tests="5" errors="0" failures="0" time="0.004">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"/>
+    </properties>
+    <testcase name="should go crunch" time="0" classname="Chrome 27.0 (Mac).Apple"/>
+    <testcase name="should create a wombat with defaults" time="0" classname="Chrome 27.0 (Mac).Wombat"/>
+    <testcase name="should name itself if name passed in options" time="0.001" classname="Chrome 27.0 (Mac).Wombat"/>
+    <testcase name="should throw if no food passed" time="0.002" classname="Chrome 27.0 (Mac).Wombat #eat"/>
+    <testcase name="should return noms if food passed" time="0.001" classname="Chrome 27.0 (Mac).Wombat #eat"/>
+    <system-out><![CDATA[Chrome 27.0 (Mac) LOG: [ '/base/test/spec/apple.js', '/base/test/spec/wombat.js' ]
+
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
