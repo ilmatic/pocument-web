@@ -13,8 +13,8 @@ files = [
   REQUIRE,
   REQUIRE_ADAPTER,
   'test-karma.js',
-  {pattern: '../www/app/js/components/**/*.js', included: false},
-  {pattern: '../www/app/js/**/*.js', included: false},
+  {pattern: '../web/app/js/components/**/*.js', included: false},
+  {pattern: '../web/app/js/**/*.js', included: false},
   {pattern: 'specs/*.js', included: false},
   {pattern: 'js/*.js', included: false}
 ];
@@ -22,7 +22,7 @@ files = [
 
 // list of files to exclude
 exclude = [
-  '../www/app/js/main.js'
+  '../web/app/js/main.js'
 ];
 
 

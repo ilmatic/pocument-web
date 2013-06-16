@@ -93,6 +93,22 @@ module.exports = function(grunt) {
 				},
 				src: ['test/specs/server/**/*Spec.js']
 			}
+		},
+		requirejs: {
+			dist: {
+				options: {
+					baseUrl: '/Users/altusllc/Git/backbone/pocumentapp/web/app/js',
+					optimize: 'none',
+					mainConfigFile: 'web/app/js/config.js',
+					name: 'main',
+					out: 'dist/out.js'
+				}
+			}
+		},
+		bower: {
+			all: {
+				rjsConfig: './web/app/js/config.js'
+			}
 		}
 	});
 

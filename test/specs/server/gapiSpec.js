@@ -2,8 +2,8 @@
 process.env.NODE_ENV = 'test';
 
 // Get the application server module.
-var chai = require('chai'),
-	gapiClient = require('gapiClient'),
+var gapiClient = require('./../../../api/tools/gapiClient'),
+	chai = require('chai'),
 	expect = chai.expect;
 
 var gapiConfig = {
@@ -19,6 +19,10 @@ describe('Google APIs', function() {
 		it('should exist', function() {
 			expect(gapiClient).to.exist;
 		});
+		it('should contain a url', function() {
+			console.log(gapiClient.url);
+			expect(gapiClient).to.have.property('url');
+		});
 		describe('#gapiConfig', function() {
 			it('should exist', function() {
 				expect(gapiConfig).to.exist;
@@ -26,7 +30,7 @@ describe('Google APIs', function() {
 		});
 		describe('#authorize', function() {
 			it('should generate an OAuth 2.0 url for accessing Google services', function() {
-				
+				expect(gapiClient).to.have.property('access_token');
 			});
 		});
 	});

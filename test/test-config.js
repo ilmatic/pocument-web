@@ -1,8 +1,8 @@
 require.config({
 	paths: {
 		// JavaScript folders.
-		components: '../www/app/js/components',
-		plugins: '../www/app/js/plugins',
+		components: '../web/app/js/components',
+		plugins: '../web/app/js/plugins',
 
 		// Libraries.
 		jquery: 'components/jquery/jquery.min',

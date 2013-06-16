@@ -18,9 +18,10 @@
     "grunt-karma": "~0.4.4",
     "grunt-mocha-phantomjs": "~0.2.8",
     "grunt-mocha-test": "~0.4.0",
-    "chai": "~1.6.1"
+    "chai": "~1.6.1",
+    "grunt-contrib-requirejs": "~0.4.1"
   },
   "scripts": {
-    "start": "node server/main"
+    "start": "node api/main"
   }
 }
