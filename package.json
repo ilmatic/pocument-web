@@ -6,7 +6,8 @@
     "path": "~0.4.9",
     "googleapis": "~0.2.11-alpha",
     "requirejs": "~2.1.6",
-    "amdefine": "0.0.5"
+    "amdefine": "0.0.5",
+    "connect": "~2.7.11"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -19,9 +20,10 @@
     "grunt-mocha-phantomjs": "~0.2.8",
     "grunt-mocha-test": "~0.4.0",
     "chai": "~1.6.1",
-    "grunt-contrib-requirejs": "~0.4.1"
+    "grunt-contrib-requirejs": "~0.4.1",
+    "superagent": "~0.14.9"
   },
   "scripts": {
-    "start": "node api/main"
+    "start": "node server"
   }
 }

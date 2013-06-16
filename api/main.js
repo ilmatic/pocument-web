@@ -1,4 +1,4 @@
-var requirejs = require('requirejs');
+/*var requirejs = require('requirejs');
 
 requirejs.config({
 	baseUrl: '/',
@@ -15,4 +15,4 @@ requirejs([
 	app.listen(port, function() {
 		console.log('Express server listening on port %d in the %s mode', port, app.settings.env);
 	});
-});
+});*/

@@ -18,6 +18,10 @@ var url = oauth2Client.generateAuthUrl({
 	scope: config.scope
 });
 
+console.log('NODE_ENV: ', process.env.NODE_ENV);
+
 // The value returned from the function is
 // used as the module export visible to Node.
-exports.url = url;
+exports.generateAuthUrl = function() {
+	return url;
+};

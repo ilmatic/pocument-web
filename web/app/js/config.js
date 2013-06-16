@@ -1,18 +1,18 @@
 // Set the require.js configuration for this application.
 require.config({
-	baseUrl: './',
+	baseUrl: './js',
 	// Initialize the application with the main application file.
 	deps: ['main'],
 
 	paths: {
 		// JavaScript folders.
-		//components: '../js/components',
-		//plugins: '../js/plugins',
+		components: '../js/components',
+		plugins: '../js/plugins',
 
 		// Libraries.
-		//jquery: 'components/jquery/jquery.min',
-		//lodash: 'components/lodash/lodash',
-		//backbone: 'components/backbone/backbone-min'
+		jquery: 'components/jquery/jquery.min',
+		lodash: 'components/lodash/lodash',
+		backbone: 'components/backbone/backbone-min'
 	},
 
 	shim: {

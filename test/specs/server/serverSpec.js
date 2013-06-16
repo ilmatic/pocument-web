@@ -1,4 +1,4 @@
-// Force the test environment to 'test'.
+/*// Force the test environment to 'test'.
 process.env.NODE_ENV = 'test';
 
 // Get the application server module.
@@ -11,4 +11,4 @@ describe('Home page', function() {
 	});
 	it('should exist');
 	it('should have a login form');
-});
+});*/
