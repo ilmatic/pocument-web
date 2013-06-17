@@ -27,17 +27,17 @@ app.configure(function() {
 	//app.use(express.static(path.join(app_root, 'test')));
 	app.use(express.static(app_root));
 	app.use(express.static(path.join(app_root, 'web')));
+	app.use(express.static(path.join(app_root, 'dist')));
 
 	// Show all errors in development
 	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
-	app.get('/gapi/authUrl', function(req, res) {
-		if (process.env.NODE_ENV === 'test') {
-			res.send(200, 'http://localhost:4471');
-		} else {
-			res.send(200, 'http://www.pocument.com');
-		}
-	});
+	// app.get('/gapi/authUrl', function(req, res) {
+	// 	var body = {
+	// 		url: process.env.NODE_ENV ? 'http://localhost:4711' : 'http://www.pocument.com'
+	// 	}
+	// 	res.send(200, body);
+	// });
 });
 
 // Start server
