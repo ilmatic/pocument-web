@@ -15,30 +15,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
-		concat: {
-			options: {
-				// Define a string to put between each file in the concatenated output
-				separator: ';'
-				//banner: '/*! <%= pkg.name %> concatenated -- <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			dist: {
-				// Define files to concatenate
-				src: ['src/**/*.js'],
-
-				// Define location of resulting JS file
-				dest: 'dist/<%= pkg.name %>.js'
-			}
-		},
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			dist: {
-				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
-				}
-			}
-		},
 		jshint: {
 			// Define the files to lint.
 			all: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -97,12 +73,37 @@ module.exports = function(grunt) {
 		requirejs: {
 			dist: {
 				options: {
-					baseUrl: '/Users/altusllc/Git/backbone/pocumentapp/web/app/js',
+					baseUrl: 'web/app/js',
 					optimize: 'none',
-					mainConfigFile: 'web/app/js/config.js',
-					name: 'main',
-					out: 'dist/out.js'
+					preserveLicenseComments: false,
+					useStrict: true,
+					wrap: true
 				}
+			}
+		},
+		useminPrepare: {
+			html: 'web/app/index.html',
+			options: {
+				dest: 'dist/app'
+			}
+		},
+		usemin: {
+			html: ['dist/app/{,*/}*.html'],
+			options: {
+				dirs: ['dist/app']
+			}
+		},
+		htmlmin: {
+			dist: {
+				options: {
+
+				},
+				files: [{
+					expand: true,
+					cwd: 'web/app',
+					src: '*.html',
+					dest: 'dist/app'
+				}]
 			}
 		},
 		bower: {
@@ -114,6 +115,11 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['uglify']);
+	grunt.registerTask('build', [
+		'useminPrepare',
+		'requirejs',
+		'htmlmin'
+	]);
 
 	// Mocha tests
 	grunt.registerTask('mocha', ['mocha_phantomjs']);
