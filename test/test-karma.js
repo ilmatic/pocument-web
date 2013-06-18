@@ -6,7 +6,7 @@ console.log(tests);
 
 requirejs.config({
 	// Karma serves files from '/base'.
-	baseUrl: '/base',
+	baseUrl: './../',
 	paths: {
 		// JavaScript folders.
 		components: 'app/js/components',
@@ -21,7 +21,7 @@ requirejs.config({
 		mocha: 'test/js/mocha',
 		chai: 'test/js/chai',
 
-		spec: 'test/spec'
+		specs: 'test/specs'
 	},
 
 	shim: {
@@ -33,7 +33,7 @@ requirejs.config({
 	},
 
 	// Ask RequireJS to load these files (all our tests).
-	deps: tests,
+	// deps: tests,
 
 	// Start test run, once RequireJS is done.
 	callback: window.__karma__.start

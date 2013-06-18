@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- Required for browser reporter -->
-    <div id="mocha"></div>
+    <div id="mocha">Hello, Moto.</div>
 
     <!-- mocha -->
     <script type="text/javascript" src="js/lib/mocha.js"></script>
@@ -20,7 +20,8 @@
     <script type="text/javascript" src="js/lib/chai.js"></script>
     <script>
         var expect = chai.expect;
+        console.log('Hi from index');
     </script>
-    <script data-main="test-config" src="js/lib/require.js"></script>
+    <script data-main="test-karma" src="js/lib/require.js"></script>
 </body>
 </html>

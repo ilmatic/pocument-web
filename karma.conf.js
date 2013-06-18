@@ -5,20 +5,33 @@
 // base path, that will be used to resolve files and exclude
 basePath = 'test/';
 
+// plugins = [
+//     'karma-html2js-preprocessor'
+// ];
+
+// // Preprocessors
+// preprocessors = {
+//   '**/*.html': 'html2js'
+// };
 
 // list of files / patterns to load in the browser
 files = [
-  MOCHA,
-  MOCHA_ADAPTER,
-  REQUIRE,
-  REQUIRE_ADAPTER,
-  'test-karma.js',
-  {pattern: '../web/app/js/components/**/*.js', included: false},
-  {pattern: '../web/app/js/**/*.js', included: false},
-  {pattern: 'specs/*.js', included: false},
-  {pattern: 'js/*.js', included: false}
+    REQUIRE,
+    REQUIRE_ADAPTER,
+    MOCHA,
+    MOCHA_ADAPTER,
+    ANGULAR_SCENARIO,
+    ANGULAR_SCENARIO_ADAPTER,
+    // 'index.html'
+    'test-karma.js',
+    'hello.html',
+    'specs/client/welcomeSpec.js',
+    // 'specs/apple.js',
+    {pattern: '../web/app/js/components/**/*.js', included: false},
+    // {pattern: '../web/app/js/**/*.js', included: false},
+    //{pattern: 'specs/**/*.js', included: false},
+    // {pattern: 'js/*.js', included: false}
 ];
-
 
 // list of files to exclude
 exclude = [
@@ -28,7 +41,7 @@ exclude = [
 
 // test results reporter to use
 // possible values: 'dots', 'progress', 'junit'
-reporters = ['progress', 'growl'];
+reporters = ['progress'];
 
 
 // web server port
@@ -60,7 +73,7 @@ autoWatch = true;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['PhantomJS'];
+browsers = ['Chrome'];
 
 
 // If browser does not capture in given timeout [ms], kill it
