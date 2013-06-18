@@ -33,35 +33,7 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
-		},
-		mocha_phantomjs: {
-			all: {
-				options: {
-					urls: ['http://localhost:4711/test/index.html'],
-
-					// Bail means if a test fails, grunt will abort. False by default.
-					bail: false,
-
-					// Pipe output console.log from JS to grunt. False by default.
-					log: true,
-
-					// Mocha options
-					mocha: {
-						ignoreLeaks: false,
-						grep: 'food'
-					},
-
-					// Select Mocha reporter
-					// http://visionmedia.github.com/mocha/#reporters
-					reporter: 'Spec',
-
-					// Indicates whether 'mocha.run()' should be executed in 'bridge.js'.
-					// If you include 'mocha.run()' in your html spec, check if environment is PhantomJS.
-					// See example/test/test2.html
-					run: true
-				}
-			}
-		},
+		}
 		mochaTest: {
 			all: {
 				options: {
@@ -70,9 +42,17 @@ module.exports = function(grunt) {
 				src: ['test/specs/server/**/*Spec.js']
 			}
 		},
+		// Clean directories before running a build or test
+		clean: {
+			dist: {
+				src: ['dist/*']
+			}
+		},
+		// RequireJS optimizer
 		requirejs: {
 			dist: {
 				options: {
+					// Base URL for referencing modules
 					baseUrl: 'web/app/js',
 					optimize: 'none',
 					preserveLicenseComments: false,
@@ -81,23 +61,25 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		// Reads html files for special <!-- build:js --> blocks which contain build configurations, and configures requirejs/concat/uglify tasks automatically.
 		useminPrepare: {
 			html: 'web/app/index.html',
 			options: {
+				// Specify destination for requirejs.
 				dest: 'dist/app'
 			}
 		},
+		// Replaces references to unoptimized files with references to optimized ones.
 		usemin: {
 			html: ['dist/app/{,*/}*.html'],
 			options: {
+				// Specify directories to search through.
 				dirs: ['dist/app']
 			}
 		},
+		// Minifiy HTML files.
 		htmlmin: {
 			dist: {
-				options: {
-
-				},
 				files: [{
 					expand: true,
 					cwd: 'web/app',
@@ -114,11 +96,15 @@ module.exports = function(grunt) {
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify']);
+	grunt.registerTask('default', ['jshint, build']);
 	grunt.registerTask('build', [
+		'clean:dist',
 		'useminPrepare',
 		'requirejs',
-		'htmlmin'
+		'htmlmin',
+		'concat',
+		'uglify',
+		'usemin'
 	]);
 
 	// Mocha tests
