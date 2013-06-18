@@ -7,7 +7,10 @@
 </head>
 <body>
     <!-- Required for browser reporter -->
-    <div id="mocha">Hello, Moto.</div>
+    <div id="mocha"></div>
+
+    <!-- Test'em adapter -->
+    <script type="text/javascript" src="/testem.js"></script>
 
     <!-- mocha -->
     <script type="text/javascript" src="js/lib/mocha.js"></script>
@@ -22,6 +25,6 @@
         var expect = chai.expect;
         console.log('Hi from index');
     </script>
-    <script data-main="test-karma" src="js/lib/require.js"></script>
+    <script data-main="testem-config" src="js/lib/require.js"></script>
 </body>
 </html>

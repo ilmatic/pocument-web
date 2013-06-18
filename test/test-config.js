@@ -27,10 +27,10 @@ require([
 ],
 
 function() {
-	// Initialize the run. Check if running in PhantomJS.
-	if (window.mochaPhantomJS) {
-		mochaPhantomJS.run();
-	} else {
-		mocha.run();
-	}
+	// // Initialize the run. Check if running in PhantomJS.
+	// if (window.mochaPhantomJS) {
+	// 	mochaPhantomJS.run();
+	// } else {
+	// 	mocha.run();
+	// }
 });
