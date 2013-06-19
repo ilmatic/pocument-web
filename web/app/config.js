@@ -9,10 +9,17 @@ require.config({
 		// components: '../js/components',
 		// plugins: '../js/plugins',
 
+		// Common folders.
+		views: 'app/views',
+		models: 'app/models',
+		collections: 'app/collections',
+
 		// Libraries.
 		jquery: 'js/components/jquery/jquery.min',
 		lodash: 'js/components/lodash/lodash',
-		backbone: 'js/components/backbone/backbone-min'
+		backbone: 'js/components/backbone/backbone-min',
+		text: 'js/components/requirejs-text/text',
+		handlebars: 'js/components/handlebars/handlebars'
 	},
 
 	shim: {
@@ -20,6 +27,9 @@ require.config({
 		backbone: {
 			deps: ['lodash', 'jquery'],
 			exports: 'Backbone'
+		},
+		handlebars: {
+			exports: 'Handlebars'
 		}
 	}
 });
