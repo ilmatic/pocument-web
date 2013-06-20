@@ -1,4 +1,7 @@
-var requirejs = require('requirejs');
+requirejs = require('requirejs');
+if (typeof define !== 'function') {
+	define = require('amdefine')(module);
+}
 
 requirejs.config({
 	// Pass the top-level main.js/index.js require

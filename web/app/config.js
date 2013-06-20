@@ -13,6 +13,7 @@ require.config({
 		views: 'app/views',
 		models: 'app/models',
 		collections: 'app/collections',
+		templates: 'app/templates',
 
 		// Libraries.
 		jquery: 'js/components/jquery/jquery.min',

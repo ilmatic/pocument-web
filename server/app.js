@@ -1,19 +1,20 @@
 // Module dependencies
 var app_root = process.cwd();
-if (typeof define !== 'function') {
-	var define = require('amdefine')(module);
-}
 
 define([
 	'express',
-	'path'
-], function(express, path) {
+	'path',
+	'connect'
+], function(express, path, connect) {
 
 	// Create server
 	var app = express();
 
 	// Configure server
 	app.configure(function() {
+		// Turn on logger middleware.
+		app.use(connect.logger('dev'));
+
 		// Parses request body and populates request.body
 		app.use(express.bodyParser());
 
@@ -24,15 +25,12 @@ define([
 		app.use(app.router);
 
 		// Where to serve static content
-		app.use(express.static(app_root));
-		app.use(express.static(path.join(app_root, 'www')));
+		app.use(express.static(path.join(app_root, 'web')));
+		app.use(express.static(path.join(app_root, 'dist')));
+		app.use(express.static(path.join(app_root, 'web/public')));
 
 		// Show all errors in development
-			app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-		});
-
-		app.configure(function() {
-			app.use(express.logger({ format: ':method :url :status' }));
+		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 	});
 
 	return app;

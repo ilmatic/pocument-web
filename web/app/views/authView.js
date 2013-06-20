@@ -3,7 +3,7 @@ define([
 	'lodash',
 	'backbone',
 	'handlebars',
-	'text!app/templates/auth.html'
+	'text!templates/auth.html'
 ], function($, _, Backbone, Handlebars, authTpl) {
 	var AuthView = Backbone.View.extend({
 		el: '#container',

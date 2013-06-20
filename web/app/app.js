@@ -4,20 +4,29 @@ define([
 	'jquery',
 	'lodash',
 	'backbone',
-	'views/authView'
+	'views/authView',
+	'views/settingsView',
+	'app/router'
 ],
 
-function($, _, Backbone, AuthView) {
+function($, _, Backbone, AuthView, SettingsView, AppRouter) {
 	'use strict';
 
-	console.log('App.js is loaded');
-	window.PocumentApp = {
-		name: 'PocumentApp',
-		version: '0.0.1',
-		authView: new AuthView()
+	function PocumentApp() {
+		this.name = 'PocumentApp';
+		this.version = '0.0.1';
+		this.authView = new AuthView();
+		this.settingsView = new SettingsView();
+		this.authView.render();
+		this.router = new AppRouter();
+		Backbone.history.start();
 	};
 
-	var app = {
-		root: '/'
+	PocumentApp.prototype = {
+
 	};
+
+	console.log('App.js is loaded');
+
+	return PocumentApp;
 });
