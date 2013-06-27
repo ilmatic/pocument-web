@@ -1,38 +1,65 @@
-var googleapis = require('googleapis'),
-	OAuth2Client = googleapis.OAuth2Client;
+var gapiClient = require('./gapi'),
+	config = require('./config');
 
-var config = {
-	client_id: '589560084010-mtg3385sggmfcq1gu61kpcc3qabs6c2a.apps.googleusercontent.com',
-	client_secret: 'JId4ORKHdguXplSDZ30uwU6J',
-	redirect_url: 'http://localhost:4711/gapi/oauth2callback',
-	scope: 'https://www.googleapis.com/auth/plus.me https://mail.google.com/',
-	access_type: 'offline'
-};
+module.exports = function(app) {
+	// Get current environment.
+	console.log('Building gapi', app.settings.env);
 
-var access_code = '4/92qwTfffUjLh995Jg_EDEO6UphUC.ojoRmDhPug0eMqTmHjyTFGM0f6jHfgI';
+	// Initialize Google APIs module.
+	gapiClient.initialize(config(app));
 
-var oauth2Client = new OAuth2Client(config.client_id, config.client_secret, config.redirect_url);
+	// OAuth2 callback for Google APIs. Parse authorization code and request access token
+	app.get('/gapi/oauth2callback', function(req, res) {
+		// Log and return Google APIs access code in response.
+		console.log(req.query);
+		res.send(200, req.query.code);
+	});
 
-// Generates a url that allows offline access
-// and asks permissions for Google+ scope.
-var url = oauth2Client.generateAuthUrl({
-	access_type: config.access_type,
-	scope: config.scope
-});
+	// Retrieve an authentication URL for Google APIs service
+	app.get('/gapi/authUrl', function(req, res) {
+		var body = {
+			url: gapiClient.generateAuthUrl()
+		}
+		res.send(200, body);
+	});
 
-console.log('NODE_ENV: ', process.env.NODE_ENV);
+	// Retrieve access tokens
+	// TODO: wire up to DB instead of global test object
+	app.get('/gapi/accessTokens', function(req, res) {
+		var body = {};
 
-// The value returned from the function is
-// used as the module export visible to Node.
-exports.generateAuthUrl = function() {
-	return url;
-};
+		gapiClient.getAccessToken(function(err, tokens) {
+			console.log('Google APIs tokens', tokens);
+			if (err) {
+				console.error(err);
+				res.send(500, 'It didn\'t work');
+			} else {
+				body.tokens = tokens;
+				res.send(200, body);
+			}
+		});
+	});
 
-exports.getAccessToken = function(callback) {
-	var token = oauth2Client.getToken(access_code, callback);
-};
+	// Refresh access tokens for Google APIs
+	// TODO: combine with retrieve so that access tokens will be automatically refreshed if expired
+	app.get('/gapi/refreshTokens', function(req, res) {
+		var body = {};
 
-exports.refreshTokens = function(callback) {
-	var refresh_token = '1/mCbhIDZhd1GukrmDsBh4aG-G-RuhHqUz1dnp5ZcaHPE';
-	oauth2Client.refreshTokens(refresh_token, callback);
+		gapiClient.refreshTokens(function(err, tokens) {
+			console.log('Google APIs tokens', tokens);
+			if (err) {
+				console.error(err);
+				res.send(500, 'It didn\'t work');
+			} else {
+				body.tokens = tokens;
+				res.send(200, body);
+			}
+		});
+	});
+
+	// Establish connection to Gmail IMAP API
+	// app.get('/gapi/imapGmail/connect', function(req, res) {
+	// 	imapGmail.connect();
+	// 	res.send(200, 'connected');
+	// });
 };
