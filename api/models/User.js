@@ -26,6 +26,6 @@ var User = mongoose.model('User', userSchema);
 module.exports = function() {
 	return {
 		schema: userSchema,
-		model: User,
+		model: User
 	};
 };

@@ -17,7 +17,7 @@
 // 	});
 // });
 
-var app = require('app'),
+var app = require('./app'),
 	port = 4711;
 
 // Start server.
