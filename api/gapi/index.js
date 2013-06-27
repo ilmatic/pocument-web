@@ -1,5 +1,6 @@
 var gapiClient = require('./gapi'),
-	config = require('./config');
+	config = require('./config'),
+	User = require('../models/user');
 
 module.exports = function(app) {
 	// Get current environment.
@@ -12,6 +13,12 @@ module.exports = function(app) {
 	app.get('/gapi/oauth2callback', function(req, res) {
 		// Log and return Google APIs access code in response.
 		console.log(req.query);
+		User.model.update({ email: 'isaaclee@pocument.com' }, { apis: { google: { auth_code: req.query.code } } }, function(err, numberAffected) {
+			if (err) {
+				console.error(err);
+			}
+			console.log('Number of users affected: ', numberAffected);
+		});
 		res.send(200, req.query.code);
 	});
 

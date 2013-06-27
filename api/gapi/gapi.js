@@ -20,7 +20,11 @@ module.exports = {
 	// Generate authorization url for Google APIs.
 	generateAuthUrl: function() {
 		if (oauth2Client && oauth2Client.opts) {
-			return oauth2Client.generateAuthUrl(oauth2Client.opts);
+			var opts = oauth2Client.opts;
+			return oauth2Client.generateAuthUrl({
+				access_type: opts.access_type,
+				scope: opts.scope
+			});
 		}
 
 		return 'OAuth2 client not initialized.';

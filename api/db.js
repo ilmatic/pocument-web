@@ -1,5 +1,6 @@
 /** Module dependencies **/
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+	User = require('./models/user');
 
 // Open connection to local MongoDB instance.
 mongoose.connect('mongodb://localhost/pocumentapp');
@@ -10,21 +11,17 @@ db.once('open', function() {
 	// Connection established.
 	console.log('Mongoose connected');
 
-	var userSchema = mongoose.Schema({
-		email: String,
-		password: String,
-		first_name: String,
-		last_name: String
-	});
-
-	var User = mongoose.model('User', userSchema);
+	// Test if user object is being instantiated properly.
+	// console.log('User schema: ', User.schema);
+	// console.log('User foo:', User.foo);
 
 	// Clean up user collection before populatiing.
-	User.remove({}, function(err) {});
+	User.model.remove({}, function(err) {});
 
-	var me = new User({
+	// Create sample user.
+	var me = User.newUser({
 		email: 'isaaclee@pocument.com',
-		password: 'Merlot00',
+		password: 'Merlot00', 
 		first_name: 'Isaac Lee',
 		last_name: 'Morris'
 	});

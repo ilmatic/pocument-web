@@ -23,9 +23,11 @@ var userSchema = mongoose.Schema({
 
 var User = mongoose.model('User', userSchema);
 
-module.exports = function() {
-	return {
-		schema: userSchema,
-		model: User
-	};
+module.exports = {
+	foo: 'bar',
+	schema: userSchema,
+	model: User,
+	newUser: function(opts) {
+		return new User(opts);
+	}
 };
