@@ -4,6 +4,12 @@ define([], function() {
 		// Access the scope of controller from here.
 		$scope.message = 'Settings page';
 
+		$scope.getAuthUrl = function() {
+			$http.get('http://localhost:4711/gapi/authUrl').success(function(data) {
+				if (data.url) window.location = data.url;
+			});
+		};
+
 		// Because this has happened asynchronously we've missed
 		// Angular's initial call to $apply after the controller has been loaded,
 		// hence we need to explicitly call it at the end of our Controller constructor.
