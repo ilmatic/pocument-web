@@ -21,11 +21,14 @@ function($, _, Backbone, AuthView, SettingsView, LoginView, AppRouter) {
 		this.loginView = new LoginView();
 		this.authView.render();
 		this.router = new AppRouter();
-		Backbone.history.start();
 	};
 
 	PocumentApp.prototype = {
-
+		initialize: function() {
+			this.settingsView.on('ready', function() {
+				Backbone.history.start();
+			});
+		}
 	};
 
 	console.log('App.js is loaded');

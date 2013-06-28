@@ -13,6 +13,9 @@ var app = express();
 app.configure(function() {
 	// Turn on logger middleware.
 	app.use(connect.logger('dev'));
+
+	// Enable strict routing.
+	app.enable('strict routing');
 	
 	// Parses request body and populates request.body
 	app.use(express.bodyParser());
@@ -29,8 +32,12 @@ app.configure(function() {
 	// Use gapi modules
 	gapi(app);
 
+	app.get('/app', function(req, res) {
+		res.redirect('/app/');
+	});
+
 	// Where to serve static content
-	app.use('/app', connect.static(path.join(process.cwd(), 'web/app')));
+	app.use('/app/', connect.static(path.join(process.cwd(), 'web/app')));
 	app.use(connect.static(path.join(process.cwd(), 'web/public')));
 
 	// Show all errors in development

@@ -9,7 +9,7 @@ var userSchema = mongoose.Schema({
 	password: String,
 	apis: {
 		google: {
-			auth_code: String,
+			authorization_code: String,
 			tokens: {
 				access_token: String,
 				expires_in: Number,

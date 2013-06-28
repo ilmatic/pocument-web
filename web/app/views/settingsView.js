@@ -22,7 +22,8 @@ define([
 
 		getAuthUrl: function(event) {
 			$.get('http://localhost:4711/gapi/authUrl', function(data) {
-				$('#authUrl').text(data.url);
+				// $('#authUrl').text(data.url);
+				if (data.url) window.location = data.url;
 			});
 		}
 	});
