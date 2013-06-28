@@ -2,11 +2,12 @@
 
 define([
 	'jquery',
-	'angular'
+	'angular',
+	'app/controllers'
 ],
 
-function($, angular) {
+function($, angular, controllers) {
 	'use strict';
 	console.log('App.js is loaded');
-	return {};
+	return angular.module('PocumentApp', ['PocumentApp.controllers']);
 });

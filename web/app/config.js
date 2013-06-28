@@ -23,7 +23,10 @@ require.config({
 	shim: {
 		angular: {
 			exports: 'angular'
-		}
+		},
+		// 'angular-boot': {
+		// 	deps: ['app/app']
+		// }
 	},
 
 	// I don't know what this does yet, but it's in the angular-requirejs seed so I'm using it.
