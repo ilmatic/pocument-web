@@ -1,11 +1,10 @@
 require([
 	'app/app',
-	'backbone',
+	'angular',
 	'jquery'
 ],
 
-function(PocumentApp, Backbone, $) {
+function(PocumentApp, angular, $) {
 	'use strict';
 	console.log('Main.js is loaded');
-	window.app = new PocumentApp();
 });

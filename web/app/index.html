@@ -1,11 +1,11 @@
 <!doctype html>
-<html>
+<html ng-app>
 <head>
 	<meta charset="utf-8">
 	<title>PocumentApp</title>
 </head>
 <body>
-	<div id="container">Hello, PocumentApp.</div>
+	<div id="container" ng-controller="RootController">{{hello}}</div>
 
 	<!-- Specify path of config for require.js, and path to r.js output for usemin and useminPrepare -->
 	<!-- build:js js/amd-app.js -->

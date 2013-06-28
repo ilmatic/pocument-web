@@ -17,20 +17,18 @@ require.config({
 
 		// Libraries.
 		jquery: 'js/components/jquery/jquery.min',
-		lodash: 'js/components/lodash/lodash',
-		backbone: 'js/components/backbone/backbone-min',
-		text: 'js/components/requirejs-text/text',
-		handlebars: 'js/components/handlebars/handlebars'
+		angular: 'js/components/angular/angular.min'
 	},
 
 	shim: {
-		// Backbone library depends on lodash and jQuery.
-		backbone: {
-			deps: ['lodash', 'jquery'],
-			exports: 'Backbone'
-		},
-		handlebars: {
-			exports: 'Handlebars'
+		angular: {
+			exports: 'angular'
 		}
-	}
+	},
+
+	// I don't know what this does yet, but it's in the angular-requirejs seed so I'm using it.
+	// Guessing it determines the loading order?
+	priority: [
+		'angular'
+	]
 });
