@@ -36,11 +36,12 @@
 app.controller('SettingsController', function($scope, $http, $location) {
 
 	$scope.message = 'Settings page';
-	$scope.googleAuthUrl = '';
 
 	$scope.goToAuthUrl = function() {
-		$location.url($scope.googleAuthUrl);
-		// window.location = $scope.googleAuthUrl;
+		// $location.url($scope.googleAuthUrl); /* Only changes url in browser window, doesn't actually navigate to new location */
+		if ($scope.googleAuthUrl) {
+			window.location = $scope.googleAuthUrl;
+		}
 	};
 
 	// Asynchronously grab Google authorization URL from server and attach it to scope.
