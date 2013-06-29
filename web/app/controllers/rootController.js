@@ -1,3 +1,3 @@
-function RootController($scope) {
-	$scope.hello = 'Hello, Moto.';
-}
+app.controller('RootController', function($scope) {
+	$scope.message = 'Hello, Moto.';
+});
