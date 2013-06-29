@@ -3,7 +3,7 @@
 
 
 // base path, that will be used to resolve files and exclude
-basePath = 'test/';
+basePath = './';
 
 // plugins = [
 //     'karma-html2js-preprocessor'
@@ -14,23 +14,24 @@ basePath = 'test/';
 //   '**/*.html': 'html2js'
 // };
 
+// FORMAT FOR KARMA 0.9+, uses CommonJS modules
+// frameworks = [
+//     'require',
+//     'mocha',
+//     'angular'
+// ];
+
 // list of files / patterns to load in the browser
 files = [
     REQUIRE,
     REQUIRE_ADAPTER,
     MOCHA,
     MOCHA_ADAPTER,
-    ANGULAR_SCENARIO,
-    ANGULAR_SCENARIO_ADAPTER,
-    // 'index.html'
-    'test-karma.js',
-    'hello.html',
-    'specs/client/welcomeSpec.js',
-    // 'specs/apple.js',
-    {pattern: '../web/app/js/components/**/*.js', included: false},
-    // {pattern: '../web/app/js/**/*.js', included: false},
-    //{pattern: 'specs/**/*.js', included: false},
-    // {pattern: 'js/*.js', included: false}
+    {pattern: 'web/public/js/components/**/*.js', included: false},
+    {pattern: 'web/app/controllers/settingsController.js', included: false},
+    {pattern: 'test/web/unit/controllers/*.js', included: false},
+    {pattern: 'test/public/js/lib/chai.js', included: false},
+    'test/config/test-main.js'
 ];
 
 // list of files to exclude

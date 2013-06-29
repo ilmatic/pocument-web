@@ -18,7 +18,7 @@
 // });
 
 var app = require('./app'),
-	port = 4711;
+	port = 8080;
 
 // Start server.
 app.listen(port, function() {

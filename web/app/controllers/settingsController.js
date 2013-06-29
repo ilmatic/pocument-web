@@ -5,9 +5,14 @@ define([], function() {
 		$scope.message = 'Settings page';
 
 		$scope.getAuthUrl = function() {
-			$http.get('http://localhost:4711/gapi/authUrl').success(function(data) {
+			$http({
+				method: 'GET',
+				url: 'http://localhost:8080/gapi/authUrl',
+				withCredentials: false
+			}).success(function(data) {
 				if (data.url) window.location = data.url;
 			});
+			return 'http://localhost:8080/gapi/authUrl';
 		};
 
 		// Because this has happened asynchronously we've missed

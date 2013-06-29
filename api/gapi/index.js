@@ -9,6 +9,19 @@ module.exports = function(app) {
 	// Initialize Google APIs module.
 	gapiClient.initialize(config(app));
 
+	// Listen for OPTIONS request.
+	// app.options('/gapi/*', function(req, res) {
+	// 	console.log('writing headers only');
+	// 	res.header('Access-Control-Allow-Origin', '*');
+	// 	res.header('Access-Control-Allow-Headers', '*');
+	// 	res.end('');
+	// });
+
+	// app.get('/gapi/*', function(req, res) {
+	// 	res.header('Access-Control-Allow-Origin', '*');
+	// 	res.header('Access-Control-Allow-Headers', '*');
+	// });
+
 	// OAuth2 callback for Google APIs. Parse authorization code and request access token
 	app.get('/gapi/oauth2callback', function(req, res) {
 		// Log and return Google APIs access code in response.

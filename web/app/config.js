@@ -13,11 +13,11 @@ require.config({
 		views: 'app/views',
 		models: 'app/models',
 		collections: 'app/collections',
-		templates: 'app/templates',
+		views: 'app/views',
 
 		// Libraries.
 		jquery: 'js/components/jquery/jquery.min',
-		angular: 'js/components/angular/angular.min'
+		angular: 'js/components/angular-complete/angular.min'
 	},
 
 	shim: {

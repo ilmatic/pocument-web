@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"setting",
+				"settingsController"
+			],
+			[
+				"route",
+				"routeProvider"
+			],
+			[
 				"acc",
 				"access_type"
 			],
@@ -88,10 +96,10 @@
 	"buffers":
 	[
 		{
-			"file": "karma-exec.conf.js",
+			"file": "web/server/main.js",
 			"settings":
 			{
-				"buffer_size": 518,
+				"buffer_size": 1157,
 				"line_ending": "Unix"
 			}
 		}
@@ -123,6 +131,18 @@
 	},
 	"file_history":
 	[
+		"/Users/altusllc/Git/backbone/pocumentapp/web/server.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/settingsController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/root.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/bower.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/Gruntfile.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/gapi.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/config.js",
@@ -131,7 +151,6 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settingsView.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/package.json",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/gapi.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/gapi/index.js",
@@ -140,24 +159,18 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/package.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/db/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/app.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/gapiSpec.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/imapGmail/index.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/db/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/usersSpec.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/loginView.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/login.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/config.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/authView.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/index.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/gapi.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/bower.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/server/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/modules/gapiClient.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/server/main.js",
@@ -234,6 +247,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"version",
 			"grunt",
 			"underscore",
 			"lib",
@@ -264,29 +278,27 @@
 			[
 				{
 					"buffer": 0,
-					"file": "karma-exec.conf.js",
-					"semi_transient": true,
+					"file": "web/server/main.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 518,
+						"buffer_size": 1157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1151,
+								1151
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 109.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
