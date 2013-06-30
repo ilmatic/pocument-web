@@ -3,26 +3,23 @@
 var expect = chai.expect;
 
 describe('SettingsController', function() {
-	var scope, settingsController;
+	var $httpBackend;
 
 	// Reset and invoke new settingsController
-	beforeEach(function() {
-		// mocks.module('PocumentApp.controllers')
-		// 	.controller('SettingsController', ['$scope', '$injector', function($scope, $injector) {
-		// 		require(['app/controllers/settingsController'], function(settingsController) {
-		// 			$injector.invoke(settingsController, this, {'$scope': $scope});
-		// 		});
-		// 	}]);
-		// mocks.inject(function($rootScope, $controller) {
-		// 	scope = $rootScope.$new();
-		// 	settingsController = $controller('SettingsController', {'$scope': $scope});
-		// });
-	});
+	beforeEach(inject(function($injector) {
+		// angular.mock.module('App');
+		$httpBackend = $injector.get('$httpBackend');
+		$httpBackend.when('GET', '/gapi/authUrl').respond({ url: 'http://www.google.com' });
+	}));
 
 	describe('Google account settings', function() {
-		it('sends a request to server for Google authorization URL', function() {
-			expect(1).to.be.ok;
-			expect(scope)
-		});
+		it('requests a Google authorization URL from the server and injects it into the model', inject(function($rootScope, $controller) {
+
+
+			var $scope = $rootScope.$new();
+			var ctrl = $controller('SettingsController', {
+				$scope: $scope
+			})
+		}));
 	});
 });

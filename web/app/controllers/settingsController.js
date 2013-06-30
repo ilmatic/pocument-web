@@ -33,21 +33,21 @@
 // 	};
 // }
 
-app.controller('SettingsController', function($scope, $http, $location) {
+// angular.module('App.Controllers.SettingsController').controller('SettingsController', function($scope, $http, $location) {
 
-	$scope.message = 'Settings page';
+// 	$scope.message = 'Settings page';
 
-	$scope.goToAuthUrl = function() {
-		// $location.url($scope.googleAuthUrl); /* Only changes url in browser window, doesn't actually navigate to new location */
-		if ($scope.googleAuthUrl) {
-			window.location = $scope.googleAuthUrl;
-		}
-	};
+// 	$scope.goToAuthUrl = function() {
+// 		// $location.url($scope.googleAuthUrl); /* Only changes url in browser window, doesn't actually navigate to new location */
+// 		if ($scope.googleAuthUrl) {
+// 			window.location = $scope.googleAuthUrl;
+// 		}
+// 	};
 
-	// Asynchronously grab Google authorization URL from server and attach it to scope.
-	$http.get('http://localhost:8080/gapi/authUrl')
-		.success(function(data) {
-			console.log(data);
-				$scope.googleAuthUrl = data.url;
-		});
-});
+// 	// Asynchronously grab Google authorization URL from server and attach it to scope.
+// 	$http.get('http://localhost:8080/gapi/authUrl')
+// 		.success(function(data) {
+// 			console.log(data);
+// 				$scope.googleAuthUrl = data.url;
+// 		});
+// });

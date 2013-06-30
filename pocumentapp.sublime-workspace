@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"http",
+				"httpBackend"
+			],
+			[
+				"Settings",
+				"SettingsController"
+			],
+			[
+				"angul",
+				"angularMocks"
+			],
+			[
+				"contr",
+				"controllers"
+			],
+			[
+				"be",
+				"beforeEach"
+			],
+			[
+				"Access",
+				"Access-Control-Allow-Origin"
+			],
+			[
 				"setting",
 				"settingsController"
 			],
@@ -95,14 +119,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "web/server/main.js",
-			"settings":
-			{
-				"buffer_size": 1157,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -131,27 +147,34 @@
 	},
 	"file_history":
 	[
-		"/Users/altusllc/Git/backbone/pocumentapp/web/server.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/settingsController.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/config.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/root.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/main.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settings.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/karma-unit.conf.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/bower.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/web/unit/controllers/settingsSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/settingsController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/karma.conf.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/config/test-main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/server/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/server.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/root.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/Gruntfile.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/gapi.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/config.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/db.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/models/user.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settingsView.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/package.json",
-		"/Users/altusllc/Git/backbone/pocumentapp/api/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/gapi.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/gapi/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/main.js",
@@ -185,7 +208,6 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/testem.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/index.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/test-config.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/karma.conf.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/test-karma.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/testem-config.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/hello.html",
@@ -273,36 +295,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "web/server/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1157,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1151,
-								1151
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 109.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
