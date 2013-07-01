@@ -44,8 +44,8 @@ module.exports = function(grunt) {
 		},
 		// Clean directories before running a build or test
 		clean: {
-			dist: {
-				src: ['dist/*']
+			web: {
+				src: ['web/build/*', 'web/dist/*']
 			}
 		},
 		// RequireJS optimizer
@@ -92,20 +92,29 @@ module.exports = function(grunt) {
 			all: {
 				rjsConfig: './web/app/js/config.js'
 			}
+		},
+		html2js: {
+			app: {
+				options: {
+					base: 'web/app'
+				},
+				src: ['web/app/**/*.tpl.html'],
+				dest: 'web/build/templates-app.js'
+			}
 		}
 	});
 
 	// Default task(s).
-	grunt.registerTask('default', ['jshint, build']);
-	grunt.registerTask('build', [
-		'clean:dist',
-		'useminPrepare',
-		'requirejs',
-		'htmlmin',
-		'concat',
-		'uglify',
-		'usemin'
-	]);
+	// grunt.registerTask('default', ['jshint, build']);
+	// grunt.registerTask('build', [
+	// 	'clean:dist',
+	// 	'useminPrepare',
+	// 	'requirejs',
+	// 	'htmlmin',
+	// 	'concat',
+	// 	'uglify',
+	// 	'usemin'
+	// ]);
 
 	// Mocha tests
 	grunt.registerTask('mocha', ['mocha_phantomjs']);
