@@ -119,6 +119,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 55,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".bowerrc",
+			"settings":
+			{
+				"buffer_size": 44,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -147,16 +163,23 @@
 	},
 	"file_history":
 	[
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/login/login.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/Gruntfile.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/build/templates-app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/login/login.tpl.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/login.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/package.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/login/login.spec.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settings.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/karma-unit.conf.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/bower.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/web/unit/controllers/settingsSpec.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/controllers.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/settingsController.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/karma.conf.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/config/test-main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers.js",
@@ -168,7 +191,6 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/web/server.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/root.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/Gruntfile.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/gapi.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/config.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/db.js",
@@ -179,7 +201,6 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/gapi/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/router/routes/gapi.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/package.json",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/db/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/app.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/gapiSpec.js",
@@ -187,7 +208,6 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/api/db/index.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/usersSpec.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/loginView.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/login.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/authView.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/main.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/index.js",
@@ -295,8 +315,63 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".bowerrc",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 44,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -35,7 +35,9 @@
     "karma-html2js-preprocessor": "0.0.1",
     "sinon-chai": "~2.4.0",
     "sinon": "~1.7.2",
-    "grunt-html2js": "~0.1.4"
+    "grunt-html2js": "~0.1.4",
+    "grunt-exec": "~0.4.2",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "scripts": {
     "start": "node server/main"

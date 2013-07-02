@@ -15,6 +15,29 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
+		exec: {
+			'web-build': {
+				cmd: 'node web/build/server'
+			}
+		},
+		copy: {
+			'web-build': {
+				files: [
+					{
+						src: ['**'],
+						dest: 'web/build/public/',
+						cwd: 'web/src/public',
+						expand: true
+					},
+					{
+						src: ['**'],
+						dest: 'web/build/app/',
+						cwd: 'web/src/app',
+						expand: true
+					}
+				]
+			}
+		},
 		jshint: {
 			// Define the files to lint.
 			all: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -44,21 +67,8 @@ module.exports = function(grunt) {
 		},
 		// Clean directories before running a build or test
 		clean: {
-			web: {
-				src: ['web/build/*', 'web/dist/*']
-			}
-		},
-		// RequireJS optimizer
-		requirejs: {
-			dist: {
-				options: {
-					// Base URL for referencing modules
-					baseUrl: 'web/app/js',
-					optimize: 'none',
-					preserveLicenseComments: false,
-					useStrict: true,
-					wrap: true
-				}
+			'web-build': {
+				src: ['web/build/*']
 			}
 		},
 		// Reads html files for special <!-- build:js --> blocks which contain build configurations, and configures requirejs/concat/uglify tasks automatically.
@@ -94,12 +104,17 @@ module.exports = function(grunt) {
 			}
 		},
 		html2js: {
-			app: {
+			'web-build': {
 				options: {
 					base: 'web/app'
 				},
 				src: ['web/app/**/*.tpl.html'],
-				dest: 'web/build/templates-app.js'
+				dest: 'web/build/app/templates-app.js'
+			}
+		},
+		'web-server': {
+			all: {
+
 			}
 		}
 	});
@@ -115,6 +130,28 @@ module.exports = function(grunt) {
 	// 	'uglify',
 	// 	'usemin'
 	// ]);
+
+	grunt.registerMultiTask('web-server', 'Process server/index.js template', function() {
+		grunt.file.copy('web/src/server/index.js', 'web/build/server/index.js', {
+			process: function(contents, path)  {
+				return grunt.template.process(contents, {
+					data: {
+						static: {
+							target: 'build'
+						}
+					}
+				});
+			}
+		})
+	});
+
+	grunt.registerTask('build', [
+		'clean:web-build',
+		'copy:web-build',
+		'html2js:web-build',
+		'web-server',
+		'exec:web-build'
+	]);
 
 	// Mocha tests
 	grunt.registerTask('mocha', ['mocha_phantomjs']);
