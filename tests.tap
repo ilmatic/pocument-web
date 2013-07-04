@@ -1,0 +1,9 @@
+ok 1 - testem.json -  Chrome 27.0 - Login module LoginController should set the loginState to "pending" as default.
+ok 2 - testem.json -  Firefox 19.0 - Login module LoginController should set the loginState to "pending" as default.
+ok 3 - testem.json -  Safari 6.0 - Login module LoginController should set the loginState to "pending" as default.
+ok 4 - testem.json -  PhantomJS 1.9 - Login module LoginController should set the loginState to "pending" as default.
+
+1..4
+# tests 4
+# pass 4
+# fail 0

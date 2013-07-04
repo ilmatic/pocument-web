@@ -8,6 +8,8 @@ lib-cov
 *.gz
 *.sublime-project
 
+.ds_store
+
 pids
 logs
 results
@@ -15,3 +17,5 @@ results
 npm-debug.log
 node_modules
 web/public/js/components
+web/src/public/js/components
+web/build/public/js/components

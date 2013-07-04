@@ -1,0 +1,13 @@
+{
+	"framework": "mocha",
+	"launch_in_dev": [
+		"chrome"
+	],
+	"src_files": [
+		"web/build/public/js/components/unstable-angular-complete/angular.min.js",
+	    "web/build/public/js/components/unstable-angular-complete/angular-mocks.js",
+	    "web/build/public/js/components/unstable-angular-complete/angular-cookies.js",
+	    "test/public/js/lib/chai.js",
+	    "web/build/app/**/*.js"
+	]
+}
