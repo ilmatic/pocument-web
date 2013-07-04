@@ -16,6 +16,5 @@ results
 
 npm-debug.log
 node_modules
-web/public/js/components
-web/src/public/js/components
-web/build/public/js/components
+src/public/js/components
+build/public/js/components

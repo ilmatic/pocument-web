@@ -16,27 +16,27 @@ module.exports = function(grunt) {
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
 		exec: {
-			'web-build': {
-				cmd: 'node web/build/server'
+			'build': {
+				cmd: 'node build/server'
 			},
-			'web-test-unit': {
+			'test-unit': {
 				// cmd: 'karma start karma-unit.conf.js'
 				cmd: 'testem -f'
 			}
 		},
 		copy: {
-			'web-build': {
+			build: {
 				files: [
 					{
 						src: ['**'],
-						dest: 'web/build/public/',
-						cwd: 'web/src/public',
+						dest: 'build/public/',
+						cwd: 'src/public',
 						expand: true
 					},
 					{
 						src: ['**'],
-						dest: 'web/build/app/',
-						cwd: 'web/src/app',
+						dest: 'build/app/',
+						cwd: 'src/app',
 						expand: true
 					}
 				]
@@ -67,13 +67,13 @@ module.exports = function(grunt) {
 		},
 		// Clean directories before running a build or test
 		clean: {
-			'web-build': {
-				src: ['web/build/*']
+			'build': {
+				src: ['build/*']
 			}
 		},
 		// Reads html files for special <!-- build:js --> blocks which contain build configurations, and configures requirejs/concat/uglify tasks automatically.
 		useminPrepare: {
-			html: 'web/app/index.html',
+			html: 'app/index.html',
 			options: {
 				// Specify destination for requirejs.
 				dest: 'dist/app'
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'web/app',
+					cwd: 'app',
 					src: '*.html',
 					dest: 'dist/app'
 				}]
@@ -100,19 +100,19 @@ module.exports = function(grunt) {
 		},
 		bower: {
 			all: {
-				rjsConfig: './web/app/js/config.js'
+				rjsConfig: './app/js/config.js'
 			}
 		},
 		html2js: {
-			'web-build': {
+			app: {
 				options: {
-					base: 'web/app'
+					base: '/'
 				},
-				src: ['web/app/**/*.tpl.html'],
-				dest: 'web/build/app/templates-app.js'
+				src: ['src/app/**/*.tpl.html'],
+				dest: 'build/app/templates-app.js'
 			}
 		},
-		'web-server': {
+		'server': {
 			all: {
 
 			}
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: [
-					'web/src/**/*.js'
+					'src/**/*.js'
 				],
 				tasks: [
 					'build'
@@ -153,8 +153,8 @@ module.exports = function(grunt) {
 	// 	'usemin'
 	// ]);
 
-	grunt.registerMultiTask('web-server', 'Process server/index.js template', function() {
-		grunt.file.copy('web/src/server/index.js', 'web/build/server/index.js', {
+	grunt.registerMultiTask('server', 'Process server/index.js template', function() {
+		grunt.file.copy('src/server/index.js', 'build/server/index.js', {
 			process: function(contents, path)  {
 				return grunt.template.process(contents, {
 					data: {
@@ -168,17 +168,17 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('build', [
-		'clean:web-build',
-		'copy:web-build',
-		'html2js:web-build',
-		'web-server',
-		// 'exec:web-build'
+		'clean:build',
+		'copy:build',
+		'html2js:app',
+		'server',
+		// 'exec:build'
 	]);
 
 	// grunt.registerTask('test-unit', [
-	// 	'clean:web-build',
-	// 	'copy:web-build',
-	// 	'html2js:web-build',
+	// 	'clean:build',
+	// 	'copy:build',
+	// 	'html2js:build',
 	// 	// 'karma:unit'
 	// 	'exec:web-test-unit'
 	// ]);
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
 		'exec:web-test-unit'
 	]);
 
-	grunt.registerTask('watch-web-build', [
+	grunt.registerTask('watch-build', [
 		'build',
 		'watch'
 	]);

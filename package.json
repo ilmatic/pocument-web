@@ -1,6 +1,6 @@
 {
-  "name": "pocumentapp",
-  "version": "0.0.1",
+  "name": "pocument-web",
+  "version": "0.0.2",
   "dependencies": {
     "express": "~3.2.6",
     "path": "~0.4.9",
@@ -41,6 +41,6 @@
     "grunt-testem": "~0.3.6"
   },
   "scripts": {
-    "start": "node server/main"
+    "start": "node build/server"
   }
 }
