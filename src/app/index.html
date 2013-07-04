@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+	<meta charset="utf-8">
+	<title>PocumentApp</title>
+	<!-- compiled JS -->
+	<% scripts.forEach(function(file) {%>
+	<script type="text/javascript" src="<%= file %>"></script><% }); %>
+</head>
+<body>
+	<div id="container" ng-view></div>
+	
+	<!-- endbuild -->
+</body>
+
+<!--
+
+
+	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular.min.js"></script>
+	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular-resource.js"></script>
+	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular-cookies.js"></script>
+	<script type="text/javascript" src="/app/app.js"></script>
+	<script type="text/javascript" src="/app/templates-app.js"></script>
+	<script type="text/javascript" src="/app/home/home.js"></script>
+	<script type="text/javascript" src="/app/settings/settings.js"></script>
+	<script type="text/javascript" src="/app/login/login.js"></script>
+	<script type="text/javascript" src="/app/session/session.js"></script>
+
+	-->

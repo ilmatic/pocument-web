@@ -1,0 +1,385 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"http",
+				"httpBackend"
+			],
+			[
+				"Settings",
+				"SettingsController"
+			],
+			[
+				"angul",
+				"angularMocks"
+			],
+			[
+				"contr",
+				"controllers"
+			],
+			[
+				"be",
+				"beforeEach"
+			],
+			[
+				"Access",
+				"Access-Control-Allow-Origin"
+			],
+			[
+				"setting",
+				"settingsController"
+			],
+			[
+				"route",
+				"routeProvider"
+			],
+			[
+				"acc",
+				"access_type"
+			],
+			[
+				"oauth2",
+				"oauth2Client"
+			],
+			[
+				"client",
+				"client_secret"
+			],
+			[
+				"O",
+				"OAuth2Client"
+			],
+			[
+				"ref",
+				"refresh_token"
+			],
+			[
+				"oauth",
+				"oauth2Client"
+			],
+			[
+				"Imap",
+				"ImapConnection"
+			],
+			[
+				"ge",
+				"generateAuthUrl"
+			],
+			[
+				"base",
+				"basePath"
+			],
+			[
+				"gapi",
+				"gapiClient"
+			],
+			[
+				"req",
+				"requirejs"
+			],
+			[
+				"requi",
+				"requirejs"
+			],
+			[
+				"ac",
+				"access_type"
+			],
+			[
+				"o",
+				"oauth2Client"
+			],
+			[
+				"re",
+				"redirect_url"
+			],
+			[
+				"requir",
+				"require"
+			],
+			[
+				"require",
+				"requirejs"
+			],
+			[
+				"mocha",
+				"mocha_phantomjs"
+			],
+			[
+				"app",
+				"app_root"
+			],
+			[
+				"test",
+				"test2"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settings.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/karma-unit.conf.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/bower.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/web/unit/controllers/settingsSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/settingsController.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/router.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/karma.conf.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/config/test-main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/server/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/server.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/root.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/settings.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/Gruntfile.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/gapi.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/db.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/models/user.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settingsView.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/gapi/package.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/gapi.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/gapi/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/router/routes/gapi.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/package.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/db/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/gapiSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/imapGmail/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/db/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/usersSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/loginView.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/login.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/authView.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/routes/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/node_modules/router/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/index.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/routes/gapi.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/server/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/modules/gapiClient.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/server/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/templates/auth.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/.bowerrc",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/server.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/.gitignore",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/testem-config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/client/welcomeSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/client/gapiAuthSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/testem.json",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test-config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test-karma.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/testem-config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/hello.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/karma-exec.conf.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/js/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/apple.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/dist/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/dist/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/web/app/js/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/server/serverSpec.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/modules/getConfig.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/siteConfig.js",
+		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/CHANGELOG",
+		"/Users/altusllc/Git/backbone/pocumentapp/api/tools/gapiClient.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/server/tools/gapiClient.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/www/app/js/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test_old.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/wombat.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/js/test-karma.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/spec/apple.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/spec/wombat.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/mocha/test-config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/mocha/test-config-depr.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/js/mocha-config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/js/test-main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/www/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/www/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/app.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/app/index.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/js/wombat.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/js/apple.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test3.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/app/js/main.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/app/js/app.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/app/js/config.js",
+		"/Users/altusllc/Git/backbone/pocumentapp/test/test2.html",
+		"/Users/altusllc/Git/backbone/pocumentapp/.jshintrc",
+		"/Users/altusllc/Git/backbone/generator-bbb/package.json",
+		"/Users/altusllc/Git/backbone/pocument-yeoman/app/scripts/app.js",
+		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/altusllc/Git/backbone/pocument-yeoman/pocument-yeoman.sublime-project",
+		"/Users/altusllc/Git/backbone/pocument-yeoman/app/scripts/config.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"watch",
+			"copy",
+			"html2js",
+			"index",
+			"index:build",
+			"build",
+			"recess",
+			"registertask",
+			"html2js",
+			"version",
+			"grunt",
+			"underscore",
+			"lib",
+			"Lib",
+			"lib",
+			"mocha",
+			"phantomjs",
+			"uglify"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "pocument-web.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

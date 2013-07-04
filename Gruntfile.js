@@ -11,8 +11,10 @@ module.exports = function(grunt) {
 		dist: 'dist'
 	};
 
+	var userConfig = require('./build.config.js');
+
 	// Project configuration.
-	grunt.initConfig({
+	var taskConfig = {
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
 		exec: {
@@ -25,18 +27,22 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {
-			build: {
+			build_app: {
 				files: [
 					{
-						src: ['**'],
-						dest: 'build/public/',
-						cwd: 'src/public',
+						src: ['<%= app_files.js %>'],
+						dest: '<%= build_dir %>/app/',
+						cwd: 'src/app/',
 						expand: true
-					},
+					}
+				]
+			},
+			build_vendor: {
+				files: [
 					{
-						src: ['**'],
-						dest: 'build/app/',
-						cwd: 'src/app',
+						src: ['<%= vendor_files.js %>'],
+						dest: '<%= build_dir %>/public/',
+						cwd: 'src/public', 
 						expand: true
 					}
 				]
@@ -71,22 +77,6 @@ module.exports = function(grunt) {
 				src: ['build/*']
 			}
 		},
-		// Reads html files for special <!-- build:js --> blocks which contain build configurations, and configures requirejs/concat/uglify tasks automatically.
-		useminPrepare: {
-			html: 'app/index.html',
-			options: {
-				// Specify destination for requirejs.
-				dest: 'dist/app'
-			}
-		},
-		// Replaces references to unoptimized files with references to optimized ones.
-		usemin: {
-			html: ['dist/app/{,*/}*.html'],
-			options: {
-				// Specify directories to search through.
-				dirs: ['dist/app']
-			}
-		},
 		// Minifiy HTML files.
 		htmlmin: {
 			dist: {
@@ -106,13 +96,13 @@ module.exports = function(grunt) {
 		html2js: {
 			app: {
 				options: {
-					base: '/'
+					base: 'src/app'
 				},
 				src: ['src/app/**/*.tpl.html'],
 				dest: 'build/app/templates-app.js'
 			}
 		},
-		'server': {
+		server: {
 			all: {
 
 			}
@@ -138,22 +128,72 @@ module.exports = function(grunt) {
 					'build'
 				]
 			}
+		},
+		index: {
+			build: {
+				// dir: '<%= build_dir %>',
+				src: [
+					// '<%= vendor_files.js %>',
+					'<%= build_dir %>/public/js/components/unstable-angular-complete/angular.js',
+					'<%= build_dir %>/public/js/**/*.js',
+					'<%= html2js.app.dest %>',
+					'<%= build_dir %>/app/**/*.js'
+				]
+			}
 		}
+	};
+
+	grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
+
+	grunt.registerTask('build', [
+		'clean:build',
+		'copy:build_app',
+		'copy:build_vendor',
+		'html2js:app',
+		'server',
+		'index:build'
+	]);
+
+	grunt.registerTask('watch-build', [
+		'build',
+		'watch'
+	]);
+
+	// Mocha tests
+	grunt.registerTask('mocha', ['mocha_phantomjs']);
+
+	function filterForJS(files) {
+		return files.filter(function(file) {
+			return file.match(/\.js$/);
+		});
+	}
+
+	grunt.registerMultiTask('index', 'Process index.html template', function() {
+		console.log(this.filesSrc);
+		var dirRE = new RegExp('^('+grunt.config('build_dir')+'\/public|build)\/', 'g');
+
+		var jsFiles = filterForJS(this.filesSrc).map(function(file) {
+			return file.replace(dirRE, '/');
+		});
+
+		console.log('jsFiles');
+
+		console.log(jsFiles);
+
+		grunt.file.copy('src/app/index.html', 'build/app/index.html', {
+			process: function(contents, path) {
+				return grunt.template.process(contents,
+				{
+					data: {
+						scripts: jsFiles
+					}
+				})
+			}
+		});
 	});
 
-	// Default task(s).
-	// grunt.registerTask('default', ['jshint, build']);
-	// grunt.registerTask('build', [
-	// 	'clean:dist',
-	// 	'useminPrepare',
-	// 	'requirejs',
-	// 	'htmlmin',
-	// 	'concat',
-	// 	'uglify',
-	// 	'usemin'
-	// ]);
-
 	grunt.registerMultiTask('server', 'Process server/index.js template', function() {
+		console.log(this.filesSrc);
 		grunt.file.copy('src/server/index.js', 'build/server/index.js', {
 			process: function(contents, path)  {
 				return grunt.template.process(contents, {
@@ -166,33 +206,4 @@ module.exports = function(grunt) {
 			}
 		})
 	});
-
-	grunt.registerTask('build', [
-		'clean:build',
-		'copy:build',
-		'html2js:app',
-		'server',
-		// 'exec:build'
-	]);
-
-	// grunt.registerTask('test-unit', [
-	// 	'clean:build',
-	// 	'copy:build',
-	// 	'html2js:build',
-	// 	// 'karma:unit'
-	// 	'exec:web-test-unit'
-	// ]);
-
-	grunt.registerTask('test-unit', [
-		'build',
-		'exec:web-test-unit'
-	]);
-
-	grunt.registerTask('watch-build', [
-		'build',
-		'watch'
-	]);
-
-	// Mocha tests
-	grunt.registerTask('mocha', ['mocha_phantomjs']);
 };
