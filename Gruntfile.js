@@ -18,6 +18,10 @@ module.exports = function(grunt) {
 		exec: {
 			'web-build': {
 				cmd: 'node web/build/server'
+			},
+			'web-test-unit': {
+				// cmd: 'karma start karma-unit.conf.js'
+				cmd: 'testem -f'
 			}
 		},
 		copy: {
@@ -48,13 +52,9 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			}
 		},
-		watch: {
-			files: ['<%= jshint.files %>'],
-			tasks: ['jshint']
-		},
 		karma: {
 			unit: {
-				configFile: 'karma.conf.js'
+				configFile: 'karma-unit.conf.js'
 			}
 		},
 		mochaTest: {
@@ -116,6 +116,28 @@ module.exports = function(grunt) {
 			all: {
 
 			}
+		},
+		testem: {
+			options: {
+				launch_in_dev: [
+					'chrome'
+				]
+			},
+			unit: {
+				src: [
+					"testem.json"
+				]
+			}
+		},
+		watch: {
+			scripts: {
+				files: [
+					'web/src/**/*.js'
+				],
+				tasks: [
+					'build'
+				]
+			}
 		}
 	});
 
@@ -150,7 +172,25 @@ module.exports = function(grunt) {
 		'copy:web-build',
 		'html2js:web-build',
 		'web-server',
-		'exec:web-build'
+		// 'exec:web-build'
+	]);
+
+	// grunt.registerTask('test-unit', [
+	// 	'clean:web-build',
+	// 	'copy:web-build',
+	// 	'html2js:web-build',
+	// 	// 'karma:unit'
+	// 	'exec:web-test-unit'
+	// ]);
+
+	grunt.registerTask('test-unit', [
+		'build',
+		'exec:web-test-unit'
+	]);
+
+	grunt.registerTask('watch-web-build', [
+		'build',
+		'watch'
 	]);
 
 	// Mocha tests

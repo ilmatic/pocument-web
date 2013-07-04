@@ -4,6 +4,7 @@ var express = require('express'),
 	connect = require('connect'),
 	// router = require('./router'),
 	gapi = require('./gapi'),
+	auth = require('./auth'),
 	db = require('./db');
 
 // Create server.
@@ -45,6 +46,9 @@ app.configure(function() {
 
 	// Use gapi modules.
 	gapi(app);
+
+	// Use authentication module.
+	auth(app);
 
 	// Show all errors in development.
 	// 	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
