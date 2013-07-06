@@ -4,17 +4,18 @@ angular.module('App.Session', ['ngCookies'])
 	// TODO: change this to use sessionStorage/localStorage instead of cookies.
 	.factory('SessionProvider', function($cookies) {
 		// Set defaults.
-		$cookies.authKey = '';
-
 		return {
-			getAuthKey: function() {
-				return $cookies.authKey;
+			getCookie: function(key) {
+				if (key) return $cookies[key];
 			},
-			setAuthKey: function(value) {
-				$cookies.authKey = value;
+			setCookie: function(key, value)  {
+				if (key && value) {
+					$cookies[key] = value;
+					return value;
+				}
 			},
-			reset: function() {
-				$cookies.authKey = '';
+			reset: function(key) {
+				if (key) $cookies[key] = '';
 			}
 		};
 	});

@@ -4,10 +4,10 @@
 		"chrome"
 	],
 	"src_files": [
-		"build/public/js/components/unstable-angular-complete/angular.min.js",
-	    "build/public/js/components/unstable-angular-complete/angular-mocks.js",
-	    "build/public/js/components/unstable-angular-complete/angular-cookies.js",
-	    "test/public/js/lib/chai.js",
-	    "build/app/**/*.js"
+		"src/public/js/components/unstable-angular-complete/angular.js",
+	    "src/public/js/components/unstable-angular-complete/angular-mocks.js",
+	    "src/public/js/components/unstable-angular-complete/angular-cookies.js",
+	    "src/public/js/components/chai/chai.js",
+	    "src/app/**/*.js"
 	]
 }
