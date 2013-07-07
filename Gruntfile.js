@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
 		exec: {
-			'build': {
+			'web-server': {
 				cmd: 'node build/server'
 			},
 			'test-unit': {
@@ -58,19 +58,6 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			}
 		},
-		karma: {
-			unit: {
-				configFile: 'karma-unit.conf.js'
-			}
-		},
-		mochaTest: {
-			all: {
-				options: {
-					reporter: 'spec'
-				},
-				src: ['test/specs/server/**/*Spec.js']
-			}
-		},
 		// Clean directories before running a build or test
 		clean: {
 			'build': {
@@ -88,11 +75,6 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-		bower: {
-			all: {
-				rjsConfig: './app/js/config.js'
-			}
-		},
 		html2js: {
 			app: {
 				options: {
@@ -100,23 +82,6 @@ module.exports = function(grunt) {
 				},
 				src: ['src/app/**/*.tpl.html'],
 				dest: 'build/app/templates-app.js'
-			}
-		},
-		server: {
-			all: {
-
-			}
-		},
-		testem: {
-			options: {
-				launch_in_dev: [
-					'chrome'
-				]
-			},
-			unit: {
-				src: [
-					"testem.json"
-				]
 			}
 		},
 		watch: {
@@ -140,6 +105,14 @@ module.exports = function(grunt) {
 					'<%= build_dir %>/app/**/*.js'
 				]
 			}
+		},
+		start: {
+			dev: {
+				tasks: [
+					'build',
+					'exec:web-server'
+				]
+			}
 		}
 	};
 
@@ -153,14 +126,6 @@ module.exports = function(grunt) {
 		'server',
 		'index:build'
 	]);
-
-	grunt.registerTask('watch-build', [
-		'build',
-		'watch'
-	]);
-
-	// Mocha tests
-	grunt.registerTask('mocha', ['mocha_phantomjs']);
 
 	function filterForJS(files) {
 		return files.filter(function(file) {
@@ -192,7 +157,7 @@ module.exports = function(grunt) {
 		});
 	});
 
-	grunt.registerMultiTask('server', 'Process server/index.js template', function() {
+	grunt.registerTask('server', 'Process server/index.js template', function() {
 		console.log(this.filesSrc);
 		grunt.file.copy('src/server/index.js', 'build/server/index.js', {
 			process: function(contents, path)  {
@@ -205,5 +170,9 @@ module.exports = function(grunt) {
 				});
 			}
 		})
+	});
+
+	grunt.registerMultiTask('start', 'Start up environment for web development', function() {
+		grunt.task.run(this.data.tasks);
 	});
 };

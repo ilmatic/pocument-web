@@ -3,7 +3,8 @@ angular.module('App.Controllers.Settings', [])
 		$routeProvider
 			.when('/settings', {
 				templateUrl: 'settings/settings.tpl.html',
-				controller: 'SettingsController'
+				controller: 'SettingsController',
+				access: 'user'
 			});
 	}])
 	.controller('SettingsController', function($scope, $http, $location) {

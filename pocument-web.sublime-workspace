@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"Sessi",
+				"SessionProvider"
+			],
+			[
+				"set",
+				"setAuthToken"
+			],
+			[
+				"filter",
+				"filterForJS"
+			],
+			[
+				"registerTask",
+				"registerMultiTask"
+			],
+			[
 				"http",
 				"httpBackend"
 			],
@@ -123,11 +139,11 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -147,6 +163,31 @@
 	},
 	"file_history":
 	[
+		"/Users/altusllc/Git/pocument/pocument-web/Gruntfile.js",
+		"/Users/altusllc/Git/pocument/pocument.sublime-project",
+		"/Users/altusllc/Git/pocument/pocument-api/pocument-api.sublime-project",
+		"/Users/altusllc/Git/pocument/pocument-web/pocument-web.sublime-project",
+		"/Users/altusllc/Git/pocument/pocument-web/testem.json",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/session/session.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/app.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/login-e2e.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/README.md",
+		"/Users/altusllc/Git/pocument/pocument-web/.gitignore",
+		"/Users/altusllc/Git/pocument/pocument-web/package.json",
+		"/Users/altusllc/Git/pocument/pocument-web/build.config.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/app/index.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/login/login.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/settings/settings.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/app/templates-app.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/home/home.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/app/login/login.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/app/home/home.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/server/index.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/server/index.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/index.html",
+		"/Users/altusllc/Git/pocument/pocument-web/.bowerrc",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settings.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/app.js",
@@ -249,8 +290,7 @@
 		"/Users/altusllc/Git/backbone/generator-bbb/package.json",
 		"/Users/altusllc/Git/backbone/pocument-yeoman/app/scripts/app.js",
 		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/altusllc/Git/backbone/pocument-yeoman/pocument-yeoman.sublime-project",
-		"/Users/altusllc/Git/backbone/pocument-yeoman/app/scripts/config.js"
+		"/Users/altusllc/Git/backbone/pocument-yeoman/pocument-yeoman.sublime-project"
 	],
 	"find":
 	{
@@ -269,6 +309,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"build",
+			"html2js",
+			"_",
+			"web/",
+			"web-server",
+			"web/",
+			"web-build",
 			"watch",
 			"copy",
 			"html2js",
@@ -351,16 +398,24 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"grunt",
+				"Gruntfile.js"
+			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/Git/pocument/pocument-api/pocument-api.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

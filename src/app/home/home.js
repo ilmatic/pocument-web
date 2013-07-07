@@ -3,7 +3,8 @@ angular.module('App.Controllers.Home', [])
 		$routeProvider
 			.when('/home', {
 				templateUrl: 'home/home.tpl.html',
-				controller: 'HomeController'
+				controller: 'HomeController',
+				access: 'public'
 			});
 	}])
 	.controller('HomeController', function($scope) {
