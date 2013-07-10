@@ -18,7 +18,7 @@ angular.module('App.Auth', ['App.Session'])
 			.when('/login', {
 				templateUrl: 'auth/login.tpl.html',
 				controller: 'LoginController',
-				access: 'public'
+				accessLevel: 'public'
 			})
 	}])
 	// 
@@ -106,10 +106,14 @@ angular.module('App.Auth', ['App.Session'])
 	.factory('AuthProvider', function(SessionProvider, AuthRouteConfig) {
 		return {
 			getUser: function() {
-				var user = SessionProvider.getCookie('user');
-				if (user) {
-					return user;
-				}
+				var user = JSON.parse(SessionProvider.getCookie('user'));
+				console.log(user);
+				return user;
+			},
+			setUser: function(user) {
+				var jsonUser = JSON.stringify(user);
+				console.log('AuthProvider.setUser: ', jsonUser);
+				SessionProvider.setCookie('user', jsonUser);
 			},
 			getAccessLevel: function() {
 
@@ -124,19 +128,21 @@ angular.module('App.Auth', ['App.Session'])
 				SessionProvider.reset('authToken');
 				return AUTH_LOGGED_OUT;
 			},
-			getAuthToken: function() {
-				return SessionProvider.getCookie('authToken');
+			getAccessToken: function() {
+				var token = JSON.parse(SessionProvider.getCookie('accessToken'));
+				return token;
 			},
-			setAuthToken: function(token) {
+			setAccessToken: function(token) {
 				if (token) {
-					SessionProvider.setCookie('authToken', token);
+					var jsonToken = JSON.stringify(token);
+					SessionProvider.setCookie('accessToken', jsonToken);
 				}
 			},
 			authorize: function(user, route) {
 				var userRole, accessLevel;
 				if (user && route) {
-					userRole = AuthRouteConfig.userRoles[user.role];
-					accessLevel = AuthRouteConfig.accessLevels[route.access];
+					userRole = AuthRouteConfig.userRoles[user.access.role];
+					accessLevel = AuthRouteConfig.accessLevels[route.accessLevel];
 					if (userRole.bitMask & accessLevel.bitMask) {
 						return true;
 					}
@@ -159,8 +165,7 @@ angular.module('App.Auth', ['App.Session'])
 		}
 
 		$scope.submitLogin = function() {
-			var data = {};
-			data.credentials = $scope.credentials;
+			var data = $scope.credentials;
 			console.log(data);
 
 			$scope.loginState = LOGIN_PENDING;
@@ -172,7 +177,10 @@ angular.module('App.Auth', ['App.Session'])
 				.success(function(data, status) {
 					console.log('Login success: ', status, ' - ', data);
 					$scope.loginState = LOGIN_SUCCESS;
-					AuthProvider.setAuthToken(data.authToken);
+					// Right now this is messy, because it is inconsistent on the client and server. Sometimes we're dealing with an entire user, and sometimes we're dealing with just an access token.
+					// TODO: normalize client and server to pass user object everywhere.
+					AuthProvider.setUser(data.user);
+					$location.url('/home');
 				})
 				.error(function(data, status) {
 					console.log('Login error: ', status, ' - ', data);
@@ -183,8 +191,10 @@ angular.module('App.Auth', ['App.Session'])
 	.run(function($rootScope, $location, AuthProvider) {
 		$rootScope.$on('$routeChangeStart', function(event, next, current) {
 			console.log('$routeChangeStart');
-			console.log('Access: ', next.access);
-			if (!AuthProvider.authorize($rootScope.user, next)) {
+			console.log('accessLevel: ', next.accessLevel);
+			var user = AuthProvider.getUser();
+			console.log(user);
+			if (!AuthProvider.authorize(user, next)) {
 				$location.url('/login');
 			}
 		});

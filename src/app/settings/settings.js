@@ -4,10 +4,10 @@ angular.module('App.Controllers.Settings', [])
 			.when('/settings', {
 				templateUrl: 'settings/settings.tpl.html',
 				controller: 'SettingsController',
-				access: 'user'
+				accessLevel: 'user'
 			});
 	}])
-	.controller('SettingsController', function($scope, $http, $location) {
+	.controller('SettingsController', function($scope, $http, $location, AuthProvider) {
 
 		$scope.message = 'Settings page';
 
@@ -20,7 +20,8 @@ angular.module('App.Controllers.Settings', [])
 		};
 
 		// Asynchronously grab Google authorization URL from server and attach it to scope.
-		$http.get('http://localhost:8080/gapi/authUrl')
+		var user = AuthProvider.getUser();
+		$http.post('http://localhost:8080/gapi/authUrl', {user: user})
 			.success(function(data) {
 				console.log(data);
 					$scope.googleAuthUrl = data.url;

@@ -78,14 +78,14 @@ describe('Auth module', function() {
 			var user = { role: 'user' };
 			var route = { access: 'user' };
 			var authorized = AuthProvider.authorize(user, route);
-			expect(authorized).to.equal(true);
+			expect(authorized).to.be.true;
 		}));
 
 		it('should not authorize a user for admin-level access.', inject(function(AuthProvider) {
 			var user = { role: 'user' };
 			var route = { access: 'admin' };
 			var authorized = AuthProvider.authorize(user, route);
-			expect(authorized).to.equal(false);
+			expect(authorized).to.be.false;
 		}));
 	});
 

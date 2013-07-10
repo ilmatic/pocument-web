@@ -4,7 +4,7 @@ angular.module('App.Controllers.Home', [])
 			.when('/home', {
 				templateUrl: 'home/home.tpl.html',
 				controller: 'HomeController',
-				access: 'public'
+				accessLevel: 'public'
 			});
 	}])
 	.controller('HomeController', function($scope) {
