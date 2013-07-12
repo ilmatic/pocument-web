@@ -140,17 +140,27 @@ angular.module('App.Auth', ['App.Session'])
 			},
 			authorize: function(user, route) {
 				var userRole, accessLevel;
-				if (user && route) {
+				if (user && route.accessLevel) {
 					userRole = AuthRouteConfig.userRoles[user.access.role];
 					accessLevel = AuthRouteConfig.accessLevels[route.accessLevel];
+
 					if (userRole.bitMask & accessLevel.bitMask) {
 						return true;
 					}
-				} else if (route.access == 'public') {
+				} else if (route.accessLevel == 'public' || !route.accessLevel) {
 					return true;
 				}
 				
 				return false;
+			}
+		};
+	})
+	.factory('AuthHttp', function($http, AuthProvider) {
+		return {
+			post: function(url, data) {
+				data = data || {};
+				data.user = AuthProvider.getUser();
+				return $http.post(url, data);
 			}
 		};
 	})

@@ -5,5 +5,8 @@ var App = window.App = angular.module('App', [
 	'App.Auth'
 ]).config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-		.otherwise({redirectTo: '/home'});
+		.when('/', {
+			accessLevel: 'public',
+			redirectTo: '/home'
+		});
 }]);

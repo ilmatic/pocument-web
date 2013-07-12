@@ -21,3 +21,4 @@ src/public/js/components
 build/public/js/components
 build
 dist
+coverage
