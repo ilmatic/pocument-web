@@ -183,7 +183,7 @@ angular.module('App.Auth', ['App.Session'])
 
 			// Login submission.
 			// Attaches credentials object from scope to $http.post() request, which is sent off to login API.
-			$http.post('http://localhost:8080/auth/login', data)
+			$http.post('http://localhost:8000/auth/login', data)
 				.success(function(data, status) {
 					console.log('Login success: ', status, ' - ', data);
 					$scope.loginState = LOGIN_SUCCESS;

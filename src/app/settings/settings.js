@@ -26,7 +26,7 @@ angular.module('App.Controllers.Settings', ['App.Auth'])
 		// 		console.log(data);
 		// 			$scope.googleAuthUrl = data.url;
 		// 	});
-		AuthHttp.post('http://localhost:8080/gapi/authUrl')
+		AuthHttp.post('http://localhost:8000/gapi/authUrl')
 			.success(function(data) {
 				console.log(data);
 				$scope.googleAuthUrl = data.url;
