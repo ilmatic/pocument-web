@@ -13,9 +13,10 @@ LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
 angular.module('App.Auth', ['App.Session'])
 	// Setup routes for login module.
-	.config(['$routeProvider', function($routeProvider) {
-		$routeProvider
-			.when('/login', {
+	.config(['$stateProvider', function($stateProvider) {
+		$stateProvider
+			.state('login', {
+				url: '/login',
 				templateUrl: 'auth/login.tpl.html',
 				controller: 'LoginController',
 				accessLevel: 'public'
@@ -199,12 +200,12 @@ angular.module('App.Auth', ['App.Session'])
 		};
 	})
 	.run(function($rootScope, $location, AuthProvider) {
-		$rootScope.$on('$routeChangeStart', function(event, next, current) {
-			console.log('$routeChangeStart');
-			console.log('accessLevel: ', next.accessLevel);
+		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+			console.log('$stateChangeStart');
+			console.log('accessLevel: ', toState.accessLevel);
 			var user = AuthProvider.getUser();
 			console.log(user);
-			if (!AuthProvider.authorize(user, next)) {
+			if (!AuthProvider.authorize(user, toState)) {
 				$location.url('/login');
 			}
 		});

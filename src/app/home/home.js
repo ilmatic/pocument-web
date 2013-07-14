@@ -1,7 +1,8 @@
 angular.module('App.Controllers.Home', [])
-	.config(['$routeProvider', function($routeProvider) {
-		$routeProvider
-			.when('/', {
+	.config(['$stateProvider', function($stateProvider) {
+		$stateProvider
+			.state('home', {
+				url: '/',
 				templateUrl: 'home/home.tpl.html',
 				controller: 'HomeController',
 				accessLevel: 'public'

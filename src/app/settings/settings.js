@@ -1,7 +1,8 @@
 angular.module('App.Controllers.Settings', ['App.Auth'])
-	.config(['$routeProvider', function($routeProvider) {
-		$routeProvider
-			.when('/settings', {
+	.config(['$stateProvider', function($stateProvider) {
+		$stateProvider
+			.state('settings', {
+				url: '/settings',
 				templateUrl: 'settings/settings.tpl.html',
 				controller: 'SettingsController',
 				accessLevel: 'user'

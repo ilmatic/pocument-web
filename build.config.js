@@ -22,7 +22,8 @@ module.exports = {
 		js: [
 			'js/components/unstable-angular-complete/angular.js',
 			'js/components/unstable-angular-complete/angular-resource.js',
-			'js/components/unstable-angular-complete/angular-cookies.js'
+			'js/components/unstable-angular-complete/angular-cookies.js',
+			'js/components/ui-router/release/angular-ui-router.js'
 		]
 	}
-} 
+};

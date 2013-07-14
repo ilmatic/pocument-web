@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery": "~2.0.2",
     "requirejs": "~2.1.6",
-    "unstable-angular-complete": "~1.1.5"
+    "unstable-angular-complete": "~1.1.5",
+    "ui-router": "~0.0.1"
   }
 }
