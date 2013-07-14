@@ -46,6 +46,16 @@ module.exports = function(grunt) {
 						expand: true
 					}
 				]
+			},
+			build_css: {
+				files: [
+					{
+						src: ['<%= app_files.css %>'],
+						dest: '<%= build_dir %>/public',
+						cwd: 'src/public',
+						expand: true
+					}
+				]
 			}
 		},
 		jshint: {
@@ -92,6 +102,22 @@ module.exports = function(grunt) {
 				tasks: [
 					'build'
 				]
+			},
+			templates: {
+				files: [
+					'src/**/*.tpl.html'
+				],
+				tasks: [
+					'build'
+				]
+			},
+			stylesheets: {
+				files: [
+					'src/public/css/**/*.css'
+				],
+				tasks: [
+					'build'
+				]
 			}
 		},
 		index: {
@@ -101,6 +127,7 @@ module.exports = function(grunt) {
 					// '<%= vendor_files.js %>',
 					'<%= build_dir %>/public/js/components/unstable-angular-complete/angular.js',
 					'<%= build_dir %>/public/js/**/*.js',
+					'<%= build_dir %>/public/css/**/*.css',
 					'<%= html2js.app.dest %>',
 					'<%= build_dir %>/app/**/*.js'
 				]
@@ -122,6 +149,7 @@ module.exports = function(grunt) {
 		'clean:build',
 		'copy:build_app',
 		'copy:build_vendor',
+		'copy:build_css',
 		'html2js:app',
 		'server',
 		'index:build'
@@ -133,6 +161,12 @@ module.exports = function(grunt) {
 		});
 	}
 
+	function filterForCSS(files) {
+		return files.filter(function(file) {
+			return file.match(/\.css$/);
+		});
+	}
+
 	grunt.registerMultiTask('index', 'Process index.html template', function() {
 		console.log(this.filesSrc);
 		var dirRE = new RegExp('^('+grunt.config('build_dir')+'\/public|build)\/', 'g');
@@ -141,18 +175,21 @@ module.exports = function(grunt) {
 			return file.replace(dirRE, '/');
 		});
 
-		console.log('jsFiles');
+		var cssFiles = filterForCSS(this.filesSrc).map(function(file) {
+			return file.replace(dirRE, '/');
+		});
 
-		console.log(jsFiles);
+		console.log('jsFiles: %j, cssFiles: %j', jsFiles, cssFiles);
 
 		grunt.file.copy('src/app/index.html', 'build/app/index.html', {
 			process: function(contents, path) {
 				return grunt.template.process(contents,
 				{
 					data: {
-						scripts: jsFiles
+						scripts: jsFiles,
+						stylesheets: cssFiles
 					}
-				})
+				});
 			}
 		});
 	});
@@ -169,7 +206,7 @@ module.exports = function(grunt) {
 					}
 				});
 			}
-		})
+		});
 	});
 
 	grunt.registerMultiTask('start', 'Start up environment for web development', function() {

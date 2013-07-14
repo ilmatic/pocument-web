@@ -4,9 +4,9 @@ var App = window.App = angular.module('App', [
 	'App.Controllers.Settings',
 	'App.Auth'
 ]).config(['$routeProvider', function($routeProvider) {
-	$routeProvider
-		.when('/', {
-			accessLevel: 'public',
-			redirectTo: '/home'
-		});
+	// $routeProvider
+	// 	.when('/', {
+	// 		accessLevel: 'public',
+	// 		redirectTo: '/'
+	// 	});
 }]);

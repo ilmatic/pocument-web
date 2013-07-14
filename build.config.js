@@ -11,6 +11,8 @@ module.exports = {
 	app_files: {
 		js: ['**/*.js', '!**/*.spec.js'],
 
+		css: ['**/*.css'],
+
 		atpl: ['src/app/**/*.tpl.html'],
 
 		html: ['src/app/index.html']

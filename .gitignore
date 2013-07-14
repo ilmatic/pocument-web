@@ -22,3 +22,5 @@ build/public/js/components
 build
 dist
 coverage
+
+libpeerconnection.log

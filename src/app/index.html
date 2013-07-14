@@ -6,6 +6,9 @@
 	<!-- compiled JS -->
 	<% scripts.forEach(function(file) {%>
 	<script type="text/javascript" src="<%= file %>"></script><% }); %>
+	<% stylesheets.forEach(function(file) {%>
+	<link rel="stylesheet" href="<%= file %>">
+	<% }); %>
 </head>
 <body>
 	<div id="container" ng-view></div>
