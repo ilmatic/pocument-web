@@ -105,6 +105,7 @@ module.exports = function(grunt) {
 			},
 			templates: {
 				files: [
+					'src/app/index.html',
 					'src/**/*.tpl.html'
 				],
 				tasks: [
@@ -113,10 +114,10 @@ module.exports = function(grunt) {
 			},
 			stylesheets: {
 				files: [
-					'src/public/css/**/*.css'
+					'src/public/scss/**/*.scss'
 				],
 				tasks: [
-					'build'
+					'copy:build_css'
 				]
 			}
 		},
@@ -125,6 +126,8 @@ module.exports = function(grunt) {
 				// dir: '<%= build_dir %>',
 				src: [
 					// '<%= vendor_files.js %>',
+					'<%= build_dir %>/public/js/components/foundation/js/vendor/zepto.js',
+					'<%= build_dir %>/public/js/components/foundation/js/vendor/jquery.js',
 					'<%= build_dir %>/public/js/components/unstable-angular-complete/angular.js',
 					'<%= build_dir %>/public/js/**/*.js',
 					'<%= build_dir %>/public/css/**/*.css',
@@ -153,6 +156,11 @@ module.exports = function(grunt) {
 		'html2js:app',
 		'server',
 		'index:build'
+	]);
+
+	grunt.registerTask('start', [
+		'build',
+		'watch'
 	]);
 
 	function filterForJS(files) {
@@ -209,7 +217,7 @@ module.exports = function(grunt) {
 		});
 	});
 
-	grunt.registerMultiTask('start', 'Start up environment for web development', function() {
-		grunt.task.run(this.data.tasks);
-	});
+	// grunt.registerMultiTask('start', 'Start up environment for web development', function() {
+	// 	grunt.task.run(this.data.tasks);
+	// });
 };

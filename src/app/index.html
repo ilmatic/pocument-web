@@ -10,23 +10,14 @@
 	<link rel="stylesheet" href="<%= file %>">
 	<% }); %>
 </head>
-<body>
-	<div id="container" ui-view></div>
+<body ui-view>
 	
-	<!-- endbuild -->
+	<script>
+		// Check for Zepto compatibility, if not compatible load jQuery.
+		// TODO: figure out how the hell this is going to work when deployed as single concatenated file. Perhaps use thin RequireJS layer which will load external libs and then load app.js? -- Probably not. Fuck.
+	  document.write('<script src=/js/components/foundation/js/vendor/'
+	    + ('__proto__' in {} ? 'zepto' : 'jquery')
+	    + '.js><\/script>');
+	</script>
 </body>
-
-<!--
-
-
-	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular.min.js"></script>
-	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular-resource.js"></script>
-	<script type="text/javascript" src="/js/components/unstable-angular-complete/angular-cookies.js"></script>
-	<script type="text/javascript" src="/app/app.js"></script>
-	<script type="text/javascript" src="/app/templates-app.js"></script>
-	<script type="text/javascript" src="/app/home/home.js"></script>
-	<script type="text/javascript" src="/app/settings/settings.js"></script>
-	<script type="text/javascript" src="/app/login/login.js"></script>
-	<script type="text/javascript" src="/app/session/session.js"></script>
-
-	-->
+</html>

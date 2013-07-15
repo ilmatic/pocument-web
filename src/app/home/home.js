@@ -1,8 +1,8 @@
-angular.module('App.Controllers.Home', [])
+angular.module('App.Home', [])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
-			.state('home', {
-				url: '/',
+			.state('root.home', {
+				url: '/home',
 				templateUrl: 'home/home.tpl.html',
 				controller: 'HomeController',
 				accessLevel: 'public'

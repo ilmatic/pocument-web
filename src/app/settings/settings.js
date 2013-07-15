@@ -1,16 +1,17 @@
-angular.module('App.Controllers.Settings', ['App.Auth'])
+angular.module('App.Settings', ['App.Auth'])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
-			.state('settings', {
+			.state('root.settings', {
 				url: '/settings',
 				templateUrl: 'settings/settings.tpl.html',
 				controller: 'SettingsController',
 				accessLevel: 'user'
 			});
 	}])
-	.controller('SettingsController', function($scope, AuthHttp, $location, AuthProvider) {
+	.controller('SettingsController', function($scope, AuthHttp, $location, AuthProvider, NavigationService) {
 
 		$scope.message = 'Settings page';
+		NavigationService.changeLocation('Hello Settings');
 
 		$scope.goToAuthUrl = function() {
 			// $location.url($scope.googleAuthUrl); /* Only changes url in browser window, doesn't actually navigate to new location */

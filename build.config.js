@@ -20,10 +20,14 @@ module.exports = {
 
 	vendor_files: {
 		js: [
+			'js/components/foundation/js/vendor/jquery.js',
+			'js/components/foundation/js/vendor/zepto.js',
 			'js/components/unstable-angular-complete/angular.js',
 			'js/components/unstable-angular-complete/angular-resource.js',
 			'js/components/unstable-angular-complete/angular-cookies.js',
-			'js/components/ui-router/release/angular-ui-router.js'
+			'js/components/ui-router/release/angular-ui-router.js',
+			'js/components/foundation/js/foundation/foundation.js'
+			
 		]
 	}
 };

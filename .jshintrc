@@ -2,6 +2,7 @@
 	"node": true,
 	"globals": {
 		"console": true,
-		"module": true
+		"module": true,
+		"angular": true
 	}
 }

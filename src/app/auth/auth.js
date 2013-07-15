@@ -15,12 +15,12 @@ angular.module('App.Auth', ['App.Session'])
 	// Setup routes for login module.
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
-			.state('login', {
+			.state('root.login', {
 				url: '/login',
 				templateUrl: 'auth/login.tpl.html',
 				controller: 'LoginController',
 				accessLevel: 'public'
-			})
+			});
 	}])
 	// 
 	.factory('AuthRouteConfig', function() {
@@ -104,12 +104,22 @@ angular.module('App.Auth', ['App.Session'])
 			accessLevels: accessLevels
 		};
 	})
-	.factory('AuthProvider', function(SessionProvider, AuthRouteConfig) {
+	.factory('AuthProvider', ['SessionProvider', 'AuthRouteConfig', '$rootScope', function(SessionProvider, AuthRouteConfig, $rootScope) {
 		return {
+			loginUser: function() {
+				$rootScope.$broadcast('userWillLogin');
+
+				$rootScope.$broadcast('userDidLogin');
+			},
+			logoutUser: function() {
+				$rootScope.$broadcast('userWillLogout');
+				SessionProvider.resetCookie('user');
+				$rootScope.$broadcast('userDidLogout');
+			},
 			getUser: function() {
-				var user = JSON.parse(SessionProvider.getCookie('user'));
-				console.log(user);
-				return user;
+				var user = SessionProvider.getCookie('user');
+				console.log('AuthProvider.getUser: ', user);
+				return user ? JSON.parse(user) : '';
 			},
 			setUser: function(user) {
 				var jsonUser = JSON.stringify(user);
@@ -155,7 +165,7 @@ angular.module('App.Auth', ['App.Session'])
 				return false;
 			}
 		};
-	})
+	}])
 	.factory('AuthHttp', function($http, AuthProvider) {
 		return {
 			post: function(url, data) {
@@ -191,7 +201,8 @@ angular.module('App.Auth', ['App.Session'])
 					// Right now this is messy, because it is inconsistent on the client and server. Sometimes we're dealing with an entire user, and sometimes we're dealing with just an access token.
 					// TODO: normalize client and server to pass user object everywhere.
 					AuthProvider.setUser(data.user);
-					$location.url('/home');
+					AuthProvider.loginUser();
+					$location.url('/');
 				})
 				.error(function(data, status) {
 					console.log('Login error: ', status, ' - ', data);

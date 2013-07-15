@@ -7,15 +7,21 @@ angular.module('App.Session', ['ngCookies'])
 		return {
 			getCookie: function(key) {
 				if (key) return $cookies[key];
+
+				return ''; // TODO: raise an exception if key is not provided.
 			},
 			setCookie: function(key, value)  {
 				if (key && value) {
 					$cookies[key] = value;
 					return value;
 				}
+
+				return ''; // TODO: raise an exception if key and value are not provided.
 			},
-			reset: function(key) {
+			resetCookie: function(key) {
 				if (key) $cookies[key] = '';
+
+				// TODO: raise an exception if key is not provided.
 			}
 		};
 	});
