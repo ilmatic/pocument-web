@@ -1,11 +1,19 @@
 'use strict';
 
-// Wrapper function -- do all grunt-related things here.
+/**
+ * Wrapper function -- do all grunt-related things here.
+ */
 module.exports = function(grunt) {
-	// Load all grunt tasks.
+	/**
+	 * Parse through dependencies, filter for those starting with 
+	 * "grunt-", and loadNpmTasks for each.
+	 */
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	// Configure paths.
+	/**
+	 * Configuration object for holding paths.
+	 * TODO: factor this out into separate module
+	 */
 	var appConfig = {
 		app: 'app',
 		dist: 'dist'
@@ -13,7 +21,9 @@ module.exports = function(grunt) {
 
 	var userConfig = require('./build.config.js');
 
-	// Project configuration.
+	/**
+	 * Configuration object for grunt tasks.
+	 */
 	var taskConfig = {
 		app: appConfig,
 		pkg: grunt.file.readJSON('package.json'),
@@ -26,7 +36,15 @@ module.exports = function(grunt) {
 				cmd: 'testem -f'
 			}
 		},
+
+		/**
+		 * @name grunt-contrib-copy
+		 * @desc Copy files from /src to /build.
+		 */
 		copy: {
+			/**
+			 * App files.
+			 */
 			build_app: {
 				files: [
 					{
@@ -37,6 +55,9 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+			/**
+			 * Third-party libraries.
+			 */
 			build_vendor: {
 				files: [
 					{
@@ -47,6 +68,9 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+			/**
+			 * Stylesheets.
+			 */
 			build_css: {
 				files: [
 					{
@@ -58,6 +82,11 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
+		/**
+		 * @name grunt-contrib-jshint
+		 * @desc Lint files during build process.
+		 */
 		jshint: {
 			// Define the files to lint.
 			all: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
@@ -68,23 +97,22 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			}
 		},
-		// Clean directories before running a build or test
+
+		/**
+		 * @name grunt-contrib-clean
+		 * @desc Clean directories before running a build.
+		 */
 		clean: {
 			'build': {
 				src: ['build/*']
 			}
 		},
-		// Minifiy HTML files.
-		htmlmin: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: 'app',
-					src: '*.html',
-					dest: 'dist/app'
-				}]
-			}
-		},
+
+		/**
+		 * @name grunt-html2js
+		 * @desc Write AngularJS templates directly to cache so they can
+		 * be deployed with app script in one request.
+		 */
 		html2js: {
 			app: {
 				options: {
@@ -94,6 +122,11 @@ module.exports = function(grunt) {
 				dest: 'build/app/templates-app.js'
 			}
 		},
+
+		/**
+		 * @name grunt-contrib-watch
+		 * @desc Watch for file changes and perform tasks when they occur.
+		 */
 		watch: {
 			scripts: {
 				files: [
@@ -121,6 +154,11 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
+		/**
+		 * @name index [** CUSTOM **]
+		 * @desc Automatically add JS and CSS tags into index.html.
+		 */
 		index: {
 			build: {
 				// dir: '<%= build_dir %>',
@@ -136,6 +174,11 @@ module.exports = function(grunt) {
 				]
 			}
 		},
+
+		/**
+		 * @name start [** CUSTOM **]
+		 * @desc Start web development.
+		 */
 		start: {
 			dev: {
 				tasks: [
@@ -143,10 +186,40 @@ module.exports = function(grunt) {
 					'exec:web-server'
 				]
 			}
+		},
+
+		/**
+		 * @name grunt-plato
+		 * @desc Analyze code for complexity, maintainability and quality.
+		 */
+		plato: {
+			dev: {
+				options: {
+					jshint: grunt.file.readJSON('.jshintrc')
+				},
+				files: {
+					'.plato': ['src/app/**/*.js']
+				}
+			}
+		},
+
+		/**
+		 * @grunt-open
+		 * @desc Automatically launch browser at specified location.
+		 */
+		open: {
+			plato: {
+				path: 'file://localhost/Users/altusllc/Git/pocument/pocument-web/.plato/index.html'
+			}
 		}
 	};
 
 	grunt.initConfig(grunt.util._.extend(taskConfig, userConfig));
+
+	/**
+	 * @name build [** CUSTOM **]
+	 * @desc Build app to /build from /src.
+	 */
 
 	grunt.registerTask('build', [
 		'clean:build',
@@ -161,6 +234,11 @@ module.exports = function(grunt) {
 	grunt.registerTask('start', [
 		'build',
 		'watch'
+	]);
+
+	grunt.registerTask('analyze', [
+		'plato:dev',
+		'open:plato'
 	]);
 
 	function filterForJS(files) {

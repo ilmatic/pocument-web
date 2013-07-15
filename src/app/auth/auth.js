@@ -1,8 +1,11 @@
-/* Login Module
+/** 
+ * App.Auth - Authentication module 
+ * =================================================================
  * Provides login view/controller.
+ * 
  * Provides a login service which checks for cached credentials from 
  * a specified service, i.e., cookies or localStorage
- * TODO: will likely rename and refactor into auth module
+ * 
 */
 
 AUTH_LOGGED_IN = 'AUTH_LOGGED_IN';
@@ -12,7 +15,12 @@ LOGIN_FAILED = 'LOGIN_FAILED';
 LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
 angular.module('App.Auth', ['App.Session'])
-	// Setup routes for login module.
+	
+
+	/**
+	 * Setup states for App.Auth module.
+	 * @param  {Function} $stateProvider
+	 */
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
 			.state('root.login', {
@@ -22,19 +30,31 @@ angular.module('App.Auth', ['App.Session'])
 				accessLevel: 'public'
 			});
 	}])
-	// 
+
+	/**
+	 * AuthRouteConfig
+	 * Configuration object App.Auth state authenticator.
+	 * @return {[type]}
+	 */
 	.factory('AuthRouteConfig', function() {
 		var config = {
-			// List all the roles you wish to use in the app.
-			// You have a max of 31 before the bit shift pushes the accompanying integer out of
-			// the memory footprint for an integer.
+			
+			/**
+			 * List all the roles used in the app.
+			 * Maximum of 31 before bit shift pushes accompanying integer out of memory footprint.
+			 * @type {Array}
+			 */
 			roles: [
 				'public',
 				'user',
 				'admin'
 			],
-			// Build out all the access levels you want referencing the roles listed above
-			// You can use the "*" symbol to represent access to all routes
+
+			/**
+			 * Define access levels for roles listed above.
+			 * Use "*" symbol to represent access to all routes.
+			 * @type {Object}
+			 */
 			accessLevels: {
 				'public': '*',
 				'anon': ['public'],
@@ -43,6 +63,11 @@ angular.module('App.Auth', ['App.Session'])
 			}
 		};
 
+		/**
+		 * Build roles object used by App.Auth state authenticator.
+		 * @param  {Array} roles
+		 * @return {Object}
+		 */
 		function buildRoles(roles) {
 			var bitMask = '01';
 			var userRoles = {};
@@ -59,6 +84,13 @@ angular.module('App.Auth', ['App.Session'])
 			return userRoles;
 		}
 
+		/**
+		 * Build access levels object which that authorize() will check
+		 * roles and access levels of states against.
+		 * @param  {Object} accessLevelDeclarations
+		 * @param  {Object} userRoles
+		 * @return {Object}
+		 */
 		function buildAccessLevels(accessLevelDeclarations, userRoles) {
 			var accessLevels = {};
 			for (var level in accessLevelDeclarations) {
@@ -104,6 +136,14 @@ angular.module('App.Auth', ['App.Session'])
 			accessLevels: accessLevels
 		};
 	})
+
+	/**
+	 * AuthProvider
+	 * @param  {[type]} SessionProvider
+	 * @param  {[type]} AuthRouteConfig
+	 * @param  {[type]} $rootScope
+	 * @return {[type]}
+	 */
 	.factory('AuthProvider', ['SessionProvider', 'AuthRouteConfig', '$rootScope', function(SessionProvider, AuthRouteConfig, $rootScope) {
 		return {
 			loginUser: function() {
@@ -166,6 +206,13 @@ angular.module('App.Auth', ['App.Session'])
 			}
 		};
 	}])
+
+	/**
+	 * [ description]
+	 * @param  {[type]} $http
+	 * @param  {[type]} AuthProvider
+	 * @return {[type]}
+	 */
 	.factory('AuthHttp', function($http, AuthProvider) {
 		return {
 			post: function(url, data) {
@@ -175,7 +222,15 @@ angular.module('App.Auth', ['App.Session'])
 			}
 		};
 	})
-	// 
+	
+	/**
+	 * [ description]
+	 * @param  {[type]} $scope
+	 * @param  {[type]} AuthProvider
+	 * @param  {[type]} $http
+	 * @param  {[type]} $location
+	 * @return {[type]}
+	 */
 	.controller('LoginController', function($scope, AuthProvider, $http, $location) {
 		// Set default loginState to pending.
 		$scope.loginState = '';
@@ -210,6 +265,14 @@ angular.module('App.Auth', ['App.Session'])
 				});
 		};
 	})
+
+	/**
+	 * [ description]
+	 * @param  {[type]} $rootScope
+	 * @param  {[type]} $location
+	 * @param  {[type]} AuthProvider
+	 * @return {[type]}
+	 */
 	.run(function($rootScope, $location, AuthProvider) {
 		$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 			console.log('$stateChangeStart');

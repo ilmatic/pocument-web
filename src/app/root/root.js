@@ -1,8 +1,8 @@
 angular.module('App.Root', [])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
+			
 			.state('root', {
-				// url: '/',
 				abstract: true,
 				templateUrl: 'root/root.tpl.html',
 				controller: 'RootController',
@@ -12,6 +12,7 @@ angular.module('App.Root', [])
 	.controller('RootController', ['$scope', 'AuthProvider', 'NavigationService', function RootController($scope, AuthProvider, NavigationService) {
 		$scope.greeting = 'Hello Pocument';
 		$scope.user = AuthProvider.getUser();
+
 
 		$scope.logout = function() {
 			AuthProvider.logoutUser();
