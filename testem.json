@@ -7,6 +7,7 @@
 		"src/public/js/components/unstable-angular-complete/angular.js",
 	    "src/public/js/components/unstable-angular-complete/angular-mocks.js",
 	    "src/public/js/components/unstable-angular-complete/angular-cookies.js",
+	    "src/public/js/components/ui-router/release/angular-ui-router.js",
 	    "src/public/js/components/chai/chai.js",
 	    "src/app/**/*.js"
 	]

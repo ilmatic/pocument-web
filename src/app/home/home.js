@@ -1,3 +1,10 @@
+/** 
+ * App.Home - Home module 
+ * =================================================================
+ * 
+ * 
+*/
+
 angular.module('App.Home', [])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider

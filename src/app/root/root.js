@@ -1,3 +1,10 @@
+/** 
+ * App.Root - Root module 
+ * =================================================================
+ * 
+ * 
+*/
+
 angular.module('App.Root', [])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider

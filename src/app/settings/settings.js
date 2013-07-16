@@ -1,3 +1,10 @@
+/** 
+ * App.Settings - Settings module 
+ * =================================================================
+ * 
+ * 
+*/
+
 angular.module('App.Settings', ['App.Auth'])
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider

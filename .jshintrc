@@ -1,8 +1,17 @@
 {
 	"node": true,
+	"expr": true,
 	"globals": {
 		"console": true,
 		"module": true,
-		"angular": true
+		"angular": true,
+		"describe": true,
+		"it": true,
+		"chai": true,
+		"beforeEach": true,
+		"before": true,
+		"afterEach": true,
+		"after": true,
+		"inject": true
 	}
 }
