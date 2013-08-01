@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"auth",
+				"authProvider"
+			],
+			[
+				"Session",
+				"SessionProvider"
+			],
+			[
+				"Roo",
+				"RootController"
+			],
+			[
+				"root",
+				"rootScope"
+			],
+			[
+				"borad",
+				"broadcastLocation"
+			],
+			[
+				"location",
+				"locationChangeStart"
+			],
+			[
+				"Auth",
+				"AuthProvider"
+			],
+			[
+				"autho",
+				"authorized"
+			],
+			[
+				"user",
+				"userRoles"
+			],
+			[
+				"access",
+				"accessLevels"
+			],
+			[
+				"acc",
+				"accessLevels"
+			],
+			[
+				"bit",
+				"bitMask"
+			],
+			[
+				"acce",
+				"accessLevelDeclarations"
+			],
+			[
+				"res",
+				"resultBitMask"
+			],
+			[
 				"Sessi",
 				"SessionProvider"
 			],
@@ -50,10 +106,6 @@
 			[
 				"route",
 				"routeProvider"
-			],
-			[
-				"acc",
-				"access_type"
 			],
 			[
 				"oauth2",
@@ -142,12 +194,36 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instlal",
+				"Package Control: Install Package"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Background Linting"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			]
 		],
-		"width": 392.0
+		"width": 467.0
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 139.0,
 		"history":
 		[
 		]
@@ -163,30 +239,52 @@
 	},
 	"file_history":
 	[
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/settings/settings.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/home/home.js",
 		"/Users/altusllc/Git/pocument/pocument-web/Gruntfile.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/session/session.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/session/session.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/root/root.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/root/root.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/testem.json",
+		"/Users/altusllc/Git/pocument/pocument-web/.jshintrc",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/home/home.spec.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/root/root.tpl.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/public/css/screen.css",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/app.js",
+		"/Users/altusllc/Git/pocument/pocument-web/.gitignore",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/settings/settings.tpl.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/index.html",
+		"/Users/altusllc/Git/pocument/pocument-web/build.config.js",
+		"/Users/altusllc/Git/pocument/pocument-web/build/app/index.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/home/home.tpl.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/login.tpl.html",
+		"/Users/altusllc/Git/pocument/pocument-web/src/public/scss/app.scss",
+		"/Users/altusllc/Git/pocument/pocument-web/build/public/css/foundation/_variables.css",
+		"/Users/altusllc/Git/pocument/pocument-web/src/public/scss/config.rb",
+		"/Users/altusllc/Git/pocument/pocument-web/build/public/css/app.css",
+		"/Users/altusllc/Git/pocument/pocument-web/src/public/scss/screen.scss",
+		"/Users/altusllc/Git/pocument/pocument-web/src/public/css/app.css",
+		"/Users/altusllc/Git/pocument/pocument-web/src/index.html",
+		"/Users/altusllc/Git/pocument/pocument-web/libpeerconnection.log",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/http.js",
+		"/Users/altusllc/Git/pocument/pocument-web/src/app/http/http.js",
+		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/altusllc/Git/pocument/pocument-web/src/server/index.js",
+		"/Users/altusllc/Git/pocument/pocument-web/package.json",
 		"/Users/altusllc/Git/pocument/pocument.sublime-project",
 		"/Users/altusllc/Git/pocument/pocument-api/pocument-api.sublime-project",
 		"/Users/altusllc/Git/pocument/pocument-web/pocument-web.sublime-project",
-		"/Users/altusllc/Git/pocument/pocument-web/testem.json",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/session/session.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/app.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/auth.spec.js",
 		"/Users/altusllc/Git/pocument/pocument-web/src/app/auth/login-e2e.spec.js",
 		"/Users/altusllc/Git/pocument/pocument-web/README.md",
-		"/Users/altusllc/Git/pocument/pocument-web/.gitignore",
-		"/Users/altusllc/Git/pocument/pocument-web/package.json",
-		"/Users/altusllc/Git/pocument/pocument-web/build.config.js",
-		"/Users/altusllc/Git/pocument/pocument-web/build/app/index.html",
 		"/Users/altusllc/Git/pocument/pocument-web/src/app/login/login.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/settings/settings.js",
 		"/Users/altusllc/Git/pocument/pocument-web/build/app/templates-app.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/home/home.js",
 		"/Users/altusllc/Git/pocument/pocument-web/build/app/login/login.js",
 		"/Users/altusllc/Git/pocument/pocument-web/build/app/home/home.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/server/index.js",
 		"/Users/altusllc/Git/pocument/pocument-web/build/server/index.js",
-		"/Users/altusllc/Git/pocument/pocument-web/src/app/index.html",
 		"/Users/altusllc/Git/pocument/pocument-web/.bowerrc",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/views/settings.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/web/app/controllers/rootController.js",
@@ -268,29 +366,7 @@
 		"/Users/altusllc/Git/backbone/pocumentapp/test/test_old.html",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/specs/wombat.js",
 		"/Users/altusllc/Git/backbone/pocumentapp/test/js/test-karma.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/spec/apple.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/spec/wombat.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/mocha/test-config.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/test.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/mocha/test-config-depr.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/js/mocha-config.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/js/test-main.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/www/app/index.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/www/index.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/app.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/app/index.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/js/wombat.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/js/apple.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/test3.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/app/js/main.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/app/js/app.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/app/js/config.js",
-		"/Users/altusllc/Git/backbone/pocumentapp/test/test2.html",
-		"/Users/altusllc/Git/backbone/pocumentapp/.jshintrc",
-		"/Users/altusllc/Git/backbone/generator-bbb/package.json",
-		"/Users/altusllc/Git/backbone/pocument-yeoman/app/scripts/app.js",
-		"/Users/altusllc/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/Users/altusllc/Git/backbone/pocument-yeoman/pocument-yeoman.sublime-project"
+		"/Users/altusllc/Git/backbone/pocumentapp/test/spec/apple.js"
 	],
 	"find":
 	{
@@ -309,6 +385,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"function(",
+			"ctrl",
+			"function(",
+			"function()",
+			"param",
+			"></",
+			"}]);",
+			"routeProvider",
+			"$routeProvider",
+			"8080",
 			"build",
 			"html2js",
 			"_",
@@ -432,7 +518,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 165.0,
+	"side_bar_width": 142.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -96,7 +96,7 @@ angular.module('App.Auth', ['App.Session'])
 		 * roles and access levels of states against.
 		 * Accepts accessLevelDeclarations and userRoles objects, and returns
 		 * an accessLevels object with each accessLevel holding a bitMask for
-		 * running bitwise operations against userRoles with.
+		 * running bitwise comparisons against userRoles.
 		 * 
 		 * @param  {Object} accessLevelDeclarations
 		 * @param  {Object} userRoles
